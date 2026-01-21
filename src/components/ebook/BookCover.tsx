@@ -1,5 +1,6 @@
+import { useNavigate } from "react-router-dom";
 import logoVertical from "@/assets/logo-vertical.png";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 interface BookCoverProps {
@@ -7,6 +8,8 @@ interface BookCoverProps {
 }
 
 const BookCover = ({ onStart }: BookCoverProps) => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent p-4">
       <div className="relative w-full max-w-lg">
@@ -53,14 +56,25 @@ const BookCover = ({ onStart }: BookCoverProps) => {
             </p>
             
             {/* Start button */}
-            <Button 
-              onClick={onStart}
-              size="lg"
-              className="group px-8"
-            >
-              Começar a Leitura
-              <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+            <div className="flex flex-col gap-3">
+              <Button 
+                onClick={onStart}
+                size="lg"
+                className="group px-8 w-full"
+              >
+                Começar a Leitura
+                <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+              
+              <Button 
+                variant="outline"
+                onClick={() => navigate("/print")}
+                className="gap-2"
+              >
+                <Printer className="h-4 w-4" />
+                Versão para Impressão / PDF
+              </Button>
+            </div>
             
             {/* Format badge */}
             <p className="mt-8 text-xs text-muted-foreground">

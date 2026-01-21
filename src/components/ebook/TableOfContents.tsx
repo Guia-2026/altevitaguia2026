@@ -1,4 +1,4 @@
-import { Brain, Droplets, UtensilsCrossed, Shirt, Home, BedDouble, Bath, Move, BookOpen } from "lucide-react";
+import { BookOpen, Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Chapter {
@@ -10,14 +10,15 @@ interface Chapter {
 }
 
 const chapters: Chapter[] = [
-  { id: "condicoes", number: 1, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson", icon: Brain },
-  { id: "higiene", number: 2, title: "Higiene e Banho", subtitle: "Protocolos de Rotina", icon: Droplets },
-  { id: "alimentacao", number: 3, title: "Alimentação", subtitle: "Cuidados com Disfagia", icon: UtensilsCrossed },
-  { id: "vestuario", number: 4, title: "Vestuário", subtitle: "Praticidade no Vestir", icon: Shirt },
-  { id: "ambiente", number: 5, title: "Adaptação do Ambiente", subtitle: "Segurança Doméstica", icon: Home },
-  { id: "quarto", number: 6, title: "Quarto", subtitle: "Iluminação e Mobiliário", icon: BedDouble },
-  { id: "banheiro", number: 7, title: "Banheiro", subtitle: "Prevenção de Quedas", icon: Bath },
-  { id: "circulacao", number: 8, title: "Áreas de Circulação", subtitle: "Sala e Corredores", icon: Move },
+  { id: "introducao", number: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: Heart },
+  { id: "condicoes", number: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: Brain },
+  { id: "ambiente", number: 3, title: "O Ambiente Conectado", subtitle: "A Casa Segura", icon: Home },
+  { id: "rotina", number: 4, title: "Protocolos de Rotina Diária", subtitle: "Higiene, Vestuário e Alimentação", icon: ClipboardList },
+  { id: "nutricao", number: 5, title: "Nutrição", subtitle: "O Prazer de Comer (+ Receitas)", icon: UtensilsCrossed },
+  { id: "medicacao", number: 6, title: "Gestão Medicamentosa", subtitle: "Tecnologia e Cuidados 2026", icon: Pill },
+  { id: "comunicacao", number: 7, title: "Comunicação", subtitle: "Estratégias Distintas", icon: MessageCircle },
+  { id: "emergencias", number: 8, title: "Plano de Ação em Emergências", subtitle: "Fuga, Deambulação e Freezing", icon: AlertTriangle },
+  { id: "atividades", number: 9, title: "Atividades Cognitivas e Motoras", subtitle: "Estimulação e Bem-estar", icon: Sparkles },
 ];
 
 interface TableOfContentsProps {
@@ -38,6 +39,7 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
           <h2 className="text-2xl md:text-3xl font-bold text-foreground">
             Índice de Capítulos
           </h2>
+          <p className="text-muted-foreground mt-2 text-sm">Edição 2026</p>
           <div className="w-20 h-1 bg-primary mx-auto mt-4 rounded-full" />
         </div>
 

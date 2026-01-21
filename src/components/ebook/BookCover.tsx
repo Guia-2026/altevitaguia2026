@@ -28,20 +28,28 @@ const BookCover = ({ onStart }: BookCoverProps) => {
               />
             </div>
             
+            {/* Edition badge */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full mb-6">
+              <span className="text-sm font-semibold">Edição 2026</span>
+            </div>
+            
             {/* Title */}
-            <div className="mb-8">
+            <div className="mb-6">
               <h1 className="text-2xl md:text-3xl font-bold text-primary mb-3 leading-tight">
-                Guia de Cuidado<br />e Segurança
+                Guia de Cuidado<br />e Convivência
               </h1>
               <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
-              <p className="text-lg text-muted-foreground font-medium">
-                Rotina e Ambiente
+              <p className="text-base text-muted-foreground font-medium">
+                Alzheimer e Parkinson
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Segurança, Tecnologia e Afeto na Rotina
               </p>
             </div>
             
-            {/* Subtitle */}
-            <p className="text-sm text-muted-foreground mb-8 max-w-xs mx-auto">
-              Um recurso de apoio para familiares e cuidadores, promovendo saúde, moradia e bem-estar.
+            {/* Quote */}
+            <p className="text-sm text-muted-foreground italic mb-8 max-w-xs mx-auto">
+              "Honrar a vida e respeitar a própria história."
             </p>
             
             {/* Start button */}

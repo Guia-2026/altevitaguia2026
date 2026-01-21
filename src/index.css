@@ -176,3 +176,71 @@
     }
   }
 }
+
+/* Print Styles */
+@media print {
+  .print-hide {
+    display: none !important;
+  }
+
+  .print-view {
+    background: white !important;
+  }
+
+  .print-page {
+    page-break-after: always;
+    page-break-inside: avoid;
+    min-height: 100vh;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  .chapter-page {
+    page-break-before: always;
+  }
+
+  .cover-page,
+  .back-cover-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .print-content h3 {
+    page-break-after: avoid;
+  }
+
+  .print-content ul,
+  .print-content ol,
+  .print-content p {
+    page-break-inside: avoid;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .bg-primary {
+    background-color: hsl(147 45% 35%) !important;
+    color: white !important;
+  }
+}
+
+/* Print preview styles */
+.print-mode .print-preview {
+  max-width: 210mm;
+}
+
+.print-view .print-page {
+  border-bottom: 1px dashed hsl(var(--border));
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.print-view .print-page:last-child {
+  border-bottom: none;
+}

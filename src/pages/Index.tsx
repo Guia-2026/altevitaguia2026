@@ -1,76 +1,83 @@
 import { useState, useCallback } from "react";
-import { Brain, Droplets, UtensilsCrossed, Shirt, Home, BedDouble, Bath, Move } from "lucide-react";
+import { Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles } from "lucide-react";
 import BookCover from "@/components/ebook/BookCover";
 import TableOfContents, { chapters } from "@/components/ebook/TableOfContents";
 import ChapterPage from "@/components/ebook/ChapterPage";
 import BookEnd from "@/components/ebook/BookEnd";
 
 // Chapter content components
-import Chapter1Conditions from "@/components/ebook/chapters/Chapter1Conditions";
-import Chapter2Hygiene from "@/components/ebook/chapters/Chapter2Hygiene";
-import Chapter3Feeding from "@/components/ebook/chapters/Chapter3Feeding";
-import Chapter4Clothing from "@/components/ebook/chapters/Chapter4Clothing";
-import Chapter5Environment from "@/components/ebook/chapters/Chapter5Environment";
-import Chapter6Bedroom from "@/components/ebook/chapters/Chapter6Bedroom";
-import Chapter7Bathroom from "@/components/ebook/chapters/Chapter7Bathroom";
-import Chapter8Circulation from "@/components/ebook/chapters/Chapter8Circulation";
+import Chapter1Introduction from "@/components/ebook/chapters/Chapter1Introduction";
+import Chapter2Conditions from "@/components/ebook/chapters/Chapter2Conditions";
+import Chapter3SmartHome from "@/components/ebook/chapters/Chapter3SmartHome";
+import Chapter4DailyRoutine from "@/components/ebook/chapters/Chapter4DailyRoutine";
+import Chapter5Nutrition from "@/components/ebook/chapters/Chapter5Nutrition";
+import Chapter6Medication from "@/components/ebook/chapters/Chapter6Medication";
+import Chapter7Communication from "@/components/ebook/chapters/Chapter7Communication";
+import Chapter8Emergencies from "@/components/ebook/chapters/Chapter8Emergencies";
+import Chapter9Activities from "@/components/ebook/chapters/Chapter9Activities";
 
 type ViewState = "cover" | "index" | "chapter" | "end";
 
 const chapterContent: Record<string, { component: React.ReactNode; icon: React.ReactNode; title: string; subtitle?: string }> = {
+  introducao: {
+    component: <Chapter1Introduction />,
+    icon: <Heart className="h-6 w-6" />,
+    title: "Introdução",
+    subtitle: "A Era da Longevidade Inteligente"
+  },
   condicoes: {
-    component: <Chapter1Conditions />,
+    component: <Chapter2Conditions />,
     icon: <Brain className="h-6 w-6" />,
     title: "Entendendo as Condições",
-    subtitle: "Alzheimer e Parkinson"
-  },
-  higiene: {
-    component: <Chapter2Hygiene />,
-    icon: <Droplets className="h-6 w-6" />,
-    title: "Higiene e Banho",
-    subtitle: "Protocolos de Rotina"
-  },
-  alimentacao: {
-    component: <Chapter3Feeding />,
-    icon: <UtensilsCrossed className="h-6 w-6" />,
-    title: "Alimentação",
-    subtitle: "Cuidados com Disfagia"
-  },
-  vestuario: {
-    component: <Chapter4Clothing />,
-    icon: <Shirt className="h-6 w-6" />,
-    title: "Vestuário",
-    subtitle: "Praticidade no Vestir"
+    subtitle: "Alzheimer e Parkinson (Contexto 2026)"
   },
   ambiente: {
-    component: <Chapter5Environment />,
+    component: <Chapter3SmartHome />,
     icon: <Home className="h-6 w-6" />,
-    title: "Adaptação do Ambiente",
-    subtitle: "Segurança Doméstica"
+    title: "O Ambiente Conectado",
+    subtitle: "A Casa Segura"
   },
-  quarto: {
-    component: <Chapter6Bedroom />,
-    icon: <BedDouble className="h-6 w-6" />,
-    title: "Quarto",
-    subtitle: "Iluminação e Mobiliário"
+  rotina: {
+    component: <Chapter4DailyRoutine />,
+    icon: <ClipboardList className="h-6 w-6" />,
+    title: "Protocolos de Rotina Diária",
+    subtitle: "Higiene, Vestuário e Alimentação"
   },
-  banheiro: {
-    component: <Chapter7Bathroom />,
-    icon: <Bath className="h-6 w-6" />,
-    title: "Banheiro",
-    subtitle: "Prevenção de Quedas"
+  nutricao: {
+    component: <Chapter5Nutrition />,
+    icon: <UtensilsCrossed className="h-6 w-6" />,
+    title: "Nutrição",
+    subtitle: "O Prazer de Comer (+ Receitas)"
   },
-  circulacao: {
-    component: <Chapter8Circulation />,
-    icon: <Move className="h-6 w-6" />,
-    title: "Áreas de Circulação",
-    subtitle: "Sala e Corredores"
+  medicacao: {
+    component: <Chapter6Medication />,
+    icon: <Pill className="h-6 w-6" />,
+    title: "Gestão Medicamentosa",
+    subtitle: "Tecnologia e Cuidados 2026"
+  },
+  comunicacao: {
+    component: <Chapter7Communication />,
+    icon: <MessageCircle className="h-6 w-6" />,
+    title: "Comunicação",
+    subtitle: "Estratégias Distintas"
+  },
+  emergencias: {
+    component: <Chapter8Emergencies />,
+    icon: <AlertTriangle className="h-6 w-6" />,
+    title: "Plano de Ação em Emergências",
+    subtitle: "Fuga, Deambulação e Freezing"
+  },
+  atividades: {
+    component: <Chapter9Activities />,
+    icon: <Sparkles className="h-6 w-6" />,
+    title: "Atividades Cognitivas e Motoras",
+    subtitle: "Estimulação e Bem-estar"
   },
 };
 
 const Index = () => {
   const [view, setView] = useState<ViewState>("cover");
-  const [currentChapter, setCurrentChapter] = useState("condicoes");
+  const [currentChapter, setCurrentChapter] = useState("introducao");
 
   const chapterIds = chapters.map(c => c.id);
   const currentChapterIndex = chapterIds.indexOf(currentChapter);
@@ -109,7 +116,7 @@ const Index = () => {
   }, []);
 
   const handleRestart = useCallback(() => {
-    setCurrentChapter("condicoes");
+    setCurrentChapter("introducao");
     setView("cover");
   }, []);
 

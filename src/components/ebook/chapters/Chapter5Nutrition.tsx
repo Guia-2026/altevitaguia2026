@@ -58,10 +58,21 @@ const Chapter5Nutrition = () => {
           <div className="mb-4">
             <h4 className="font-semibold text-foreground mb-2">📝 Ingredientes:</h4>
             <ul className="space-y-1 text-foreground/80 text-sm">
-              <li>• Batata-doces cozidas</li>
-              <li>• Manteiga</li>
-              <li>• Gengibre ralado (anti-inflamatório)</li>
+              <li>• 2 batatas-doces médias</li>
+              <li>• 1 colher de sopa de manteiga</li>
+              <li>• 1 colher de chá de gengibre ralado (anti-inflamatório)</li>
+              <li>• Sal a gosto</li>
             </ul>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-semibold text-foreground mb-2">👨‍🍳 Preparo:</h4>
+            <ol className="space-y-1 text-foreground/80 text-sm list-decimal list-inside">
+              <li>Cozinhe as batatas-doces em água até ficarem bem macias</li>
+              <li>Escorra e descasque enquanto ainda quentes</li>
+              <li>Coloque no processador com a manteiga e o gengibre</li>
+              <li>Bata até obter uma textura completamente lisa</li>
+              <li>Tempere com sal e sirva morno</li>
+            </ol>
           </div>
           <div className="bg-primary/5 p-3 rounded-lg">
             <p className="text-sm text-primary font-medium">
@@ -87,8 +98,18 @@ const Chapter5Nutrition = () => {
             <h4 className="font-semibold text-foreground mb-2">📝 Ingredientes:</h4>
             <ul className="space-y-1 text-foreground/80 text-sm">
               <li>• 500ml de água de coco</li>
-              <li>• Gelatina incolor</li>
+              <li>• 12g de gelatina incolor (1 envelope)</li>
             </ul>
+          </div>
+          <div className="mb-4">
+            <h4 className="font-semibold text-foreground mb-2">👨‍🍳 Preparo:</h4>
+            <ol className="space-y-1 text-foreground/80 text-sm list-decimal list-inside">
+              <li>Hidrate a gelatina em 100ml de água de coco fria por 5 minutos</li>
+              <li>Aqueça o restante da água de coco (400ml) sem ferver</li>
+              <li>Misture a gelatina hidratada na água morna até dissolver completamente</li>
+              <li>Despeje em forminhas ou travessa</li>
+              <li>Leve à geladeira por no mínimo 4 horas</li>
+            </ol>
           </div>
           <div className="bg-primary/5 p-3 rounded-lg">
             <p className="text-sm text-primary font-medium">

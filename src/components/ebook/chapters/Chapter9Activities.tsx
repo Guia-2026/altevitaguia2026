@@ -425,6 +425,105 @@ const Chapter9Activities = () => {
         </SectionCard>
       </div>
 
+      {/* Plano Alternativo - Semanas Atípicas */}
+      <div className="border-2 border-destructive/20 rounded-xl">
+        <SectionCard
+          title="Plano para Semanas Atípicas"
+          subtitle="Consultas médicas, exames ou dias de fadiga intensa"
+          icon={<span className="text-2xl">🩺</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Quando há <strong className="text-primary">consultas, exames ou recuperação</strong>, reduza a intensidade e priorize o descanso. Use este plano mais leve.
+          </p>
+
+          {/* Dia de consulta médica */}
+          <div className="bg-destructive/5 p-4 rounded-lg mb-4">
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-xl">🏥</span>
+              <p className="text-sm font-semibold text-foreground">Dia de Consulta/Exame</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-3">
+              <div className="bg-background/50 p-3 rounded-lg">
+                <p className="text-xs font-medium text-primary mb-1">Antes da consulta</p>
+                <p className="text-xs text-foreground/80">
+                  Apenas rotina básica (higiene, alimentação). Evite atividades que cansem ou agitem.
+                </p>
+              </div>
+              <div className="bg-background/50 p-3 rounded-lg">
+                <p className="text-xs font-medium text-primary mb-1">Depois da consulta</p>
+                <p className="text-xs text-foreground/80">
+                  Musicoterapia calma (5–10 min) ou simplesmente descanso com companhia tranquila.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Semana leve */}
+          <p className="text-sm font-semibold text-foreground mb-3">📋 Plano Semanal Reduzido</p>
+          <div className="space-y-2 mb-4">
+            {[
+              { day: "Segunda", emoji: "🌅", activity: "Música calma (10 min)", note: "Sem atividade motora" },
+              { day: "Terça", emoji: "🩺", activity: "Dia de consulta — descanso", note: "Apenas rotina básica" },
+              { day: "Quarta", emoji: "💤", activity: "Recuperação — companhia tranquila", note: "Conversa leve, fotos" },
+              { day: "Quinta", emoji: "🪴", activity: "Regar plantas (5 min)", note: "Atividade mínima" },
+              { day: "Sexta", emoji: "🎵", activity: "Musicoterapia (15 min)", note: "Se houver disposição" },
+              { day: "Sábado", emoji: "📦", activity: "Caixa de Memórias (10 min)", note: "Sentado, sem esforço" },
+              { day: "Domingo", emoji: "☀️", activity: "Conversa + álbum de fotos", note: "Atividade social leve" },
+            ].map((item) => (
+              <div
+                key={item.day}
+                className="bg-accent/30 p-3 rounded-lg grid grid-cols-1 md:grid-cols-[100px_1fr_1fr] gap-2 md:gap-4 items-center"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">{item.emoji}</span>
+                  <span className="font-medium text-foreground text-sm">{item.day}</span>
+                </div>
+                <span className="text-xs text-foreground/80">{item.activity}</span>
+                <span className="text-xs text-muted-foreground italic">{item.note}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Sinais de alerta */}
+          <div className="bg-destructive/10 p-4 rounded-lg mb-4">
+            <p className="text-sm font-semibold text-destructive mb-2">⚠️ Sinais para suspender atividades</p>
+            <div className="grid md:grid-cols-2 gap-2">
+              <ul className="text-xs text-foreground/80 space-y-1">
+                <li>• Sonolência excessiva ou confusão</li>
+                <li>• Irritabilidade ou recusa persistente</li>
+                <li>• Dor ou desconforto físico</li>
+              </ul>
+              <ul className="text-xs text-foreground/80 space-y-1">
+                <li>• Febre ou mal-estar geral</li>
+                <li>• Efeitos colaterais de medicação</li>
+                <li>• Noite mal dormida</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Dicas de adaptação */}
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-primary mb-2">💊 Semana com nova medicação</p>
+              <p className="text-xs text-foreground/80">
+                Observe reações nos primeiros dias. Mantenha apenas atividades passivas (música, companhia) até ajuste.
+              </p>
+            </div>
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-primary mb-2">😴 Período de maior fadiga</p>
+              <p className="text-xs text-foreground/80">
+                Prefira atividades sentadas, curtas (5–10 min), com pausas. Respeite cochilos e hidratação.
+              </p>
+            </div>
+          </div>
+
+          <Tip>
+            Não existe "atraso" — pular dias ou semanas é normal. O bem-estar sempre vem antes da estimulação.
+          </Tip>
+        </SectionCard>
+      </div>
+
       <AlertBox type="tip" title="Dica Altevita">
         Adapte as atividades ao gosto pessoal e ao dia (energia, humor, sono). O importante é estimular de forma prazerosa, sem pressão por resultados.
       </AlertBox>

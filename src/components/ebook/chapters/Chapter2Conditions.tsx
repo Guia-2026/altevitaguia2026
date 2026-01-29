@@ -1,15 +1,15 @@
-import brainIllustration from "@/assets/brain-illustration.png";
+import elderlyCareCover from "@/assets/elderly-care-cover.jpg";
 import AlertBox from "../AlertBox";
 
 const Chapter2Conditions = () => {
   return (
     <div className="space-y-8">
-      {/* Brain illustration */}
+      {/* Cover illustration */}
       <div className="overflow-hidden rounded-xl border border-border">
         <img 
-          src={brainIllustration} 
-          alt="Ilustração do cérebro mostrando áreas afetadas" 
-          className="w-full h-48 object-contain bg-muted p-4"
+          src={elderlyCareCover} 
+          alt="Cuidado com idosos - mãos entrelaçadas representando afeto e segurança" 
+          className="w-full h-56 object-cover"
         />
       </div>
 

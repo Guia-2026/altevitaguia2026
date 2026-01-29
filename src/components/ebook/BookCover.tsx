@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import logoVertical from "@/assets/logo-vertical.png";
-import elderlyCareCover from "@/assets/elderly-care-cover.jpg";
 import { ChevronRight, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -22,37 +21,27 @@ const BookCover = ({ onStart }: BookCoverProps) => {
           {/* Spine decoration */}
           <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-r from-primary/20 to-transparent" />
           
-          {/* Cover Image */}
-          <div className="relative h-48 md:h-56 overflow-hidden">
-            <img 
-              src={elderlyCareCover} 
-              alt="Cuidado com idosos" 
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
-            {/* Logo overlay */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+          <div className="p-8 md:p-12 text-center">
+            {/* Logo */}
+            <div className="mb-8">
               <img 
                 src={logoVertical} 
                 alt="Grupo Altevita" 
-                className="h-20 md:h-24 w-auto drop-shadow-lg"
+                className="h-28 md:h-36 w-auto mx-auto"
               />
             </div>
-          </div>
-          
-          <div className="p-6 md:p-8 text-center">
             
             {/* Edition badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full mb-4">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full mb-6">
               <span className="text-sm font-semibold">Edição 2026</span>
             </div>
             
             {/* Title */}
-            <div className="mb-4">
-              <h1 className="text-2xl md:text-3xl font-bold text-primary mb-2 leading-tight">
+            <div className="mb-6">
+              <h1 className="text-2xl md:text-3xl font-bold text-primary mb-3 leading-tight">
                 Guia de Cuidado<br />e Convivência
               </h1>
-              <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-3" />
+              <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
               <p className="text-base text-muted-foreground font-medium">
                 Alzheimer e Parkinson
               </p>
@@ -62,7 +51,7 @@ const BookCover = ({ onStart }: BookCoverProps) => {
             </div>
             
             {/* Quote */}
-            <p className="text-sm text-muted-foreground italic mb-6 max-w-xs mx-auto">
+            <p className="text-sm text-muted-foreground italic mb-8 max-w-xs mx-auto">
               "Honrar a vida e respeitar a própria história."
             </p>
             

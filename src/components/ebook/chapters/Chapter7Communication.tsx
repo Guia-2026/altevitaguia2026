@@ -400,6 +400,108 @@ const Chapter7Communication = () => {
         </div>
       </div>
 
+      {/* Quick Print Checklist */}
+      <div className="bg-card rounded-xl p-6 border-2 border-dashed border-primary/40 print:border-solid">
+        <div className="flex items-center gap-3 mb-4">
+          <span className="text-3xl">🖨️</span>
+          <div>
+            <h3 className="text-xl font-bold text-primary">Checklist Rápido de Comunicação</h3>
+            <p className="text-sm text-muted-foreground">Recorte e cole no posto de enfermagem</p>
+          </div>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Alzheimer Checklist */}
+          <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
+            <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
+              🧠 ALZHEIMER
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Não corrigi a realidade dele</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Validei a emoção primeiro</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Usei frases curtas e simples</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Tom de voz calmo e acolhedor</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Redirecionei com atividade prazerosa</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Ofereci apenas 2 opções de escolha</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Usei comunicação não-verbal (gestos, toque)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Reduzi estímulos durante agitação</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Parkinson Checklist */}
+          <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/30">
+            <h4 className="font-bold text-secondary-foreground mb-3 flex items-center gap-2">
+              🤲 PARKINSON
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Esperei 10 segundos pela resposta</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Não completei as frases por ele</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Verifiquei se é período ON ou OFF</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Estimulei a falar mais alto</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>No freezing: usei comandos rítmicos</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Não puxei durante congelamento</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Lembrei que rosto neutro ≠ desinteresse</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-primary font-bold">□</span>
+                <span>Fiz exercícios de voz junto com ele</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-4 p-3 bg-muted rounded-lg">
+          <p className="text-xs text-muted-foreground text-center">
+            <strong>⚠️ REGRA UNIVERSAL:</strong> Fale de frente, na altura dos olhos, com paciência. 
+            Nunca fale sobre a pessoa como se ela não estivesse presente.
+          </p>
+        </div>
+      </div>
+
       <AlertBox type="tip" title="Lembre-se">
         A comunicação eficaz é a base do cuidado. Paciência e empatia transformam interações difíceis em momentos de conexão.
       </AlertBox>

@@ -11,6 +11,86 @@ const Chapter5Nutrition = () => {
         </p>
       </div>
 
+      {/* Thickeners and Consistencies Section */}
+      <div className="bg-card rounded-xl overflow-hidden border-2 border-secondary/30">
+        <div className="bg-secondary/20 p-4">
+          <div className="flex items-center gap-3">
+            <span className="text-4xl">📊</span>
+            <div>
+              <h3 className="text-xl font-bold text-foreground">Guia de Consistências para Disfagia</h3>
+              <p className="text-sm text-muted-foreground">Classificação Internacional IDDSI</p>
+            </div>
+          </div>
+        </div>
+        <div className="p-5 space-y-5">
+          {/* Consistency levels */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">🥄 Níveis de Consistência para Líquidos:</h4>
+            <div className="grid gap-3">
+              <div className="bg-primary/5 p-3 rounded-lg border-l-4 border-primary">
+                <p className="font-medium text-primary">Nível 0 - Líquido Fino</p>
+                <p className="text-sm text-foreground/70">Água, chá, café, sucos coados. Flui rapidamente.</p>
+              </div>
+              <div className="bg-primary/10 p-3 rounded-lg border-l-4 border-primary">
+                <p className="font-medium text-primary">Nível 1 - Levemente Espesso</p>
+                <p className="text-sm text-foreground/70">Mais grosso que água, mas ainda flui. Ex: leite batido com fruta.</p>
+              </div>
+              <div className="bg-primary/15 p-3 rounded-lg border-l-4 border-primary">
+                <p className="font-medium text-primary">Nível 2 - Pouco Espesso</p>
+                <p className="text-sm text-foreground/70">Flui lentamente da colher. Ex: vitamina cremosa, iogurte líquido.</p>
+              </div>
+              <div className="bg-primary/20 p-3 rounded-lg border-l-4 border-primary">
+                <p className="font-medium text-primary">Nível 3 - Moderadamente Espesso</p>
+                <p className="text-sm text-foreground/70">Pode ser bebido de copo, mas não flui facilmente. Ex: mel, creme.</p>
+              </div>
+              <div className="bg-primary/25 p-3 rounded-lg border-l-4 border-primary">
+                <p className="font-medium text-primary">Nível 4 - Extremamente Espesso</p>
+                <p className="text-sm text-foreground/70">Precisa de colher, não flui. Ex: purê, pudim firme.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Thickeners */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">🧪 Tipos de Espessantes:</h4>
+            <div className="grid md:grid-cols-2 gap-3">
+              <div className="bg-card p-4 rounded-lg border border-border">
+                <p className="font-medium text-foreground mb-1">Espessantes Industriais</p>
+                <ul className="text-sm text-foreground/70 space-y-1">
+                  <li>• <strong>À base de amido:</strong> Resource® ThickenUp, Nutilis®</li>
+                  <li>• <strong>À base de goma:</strong> ThickenUp Clear®, Thick & Easy®</li>
+                  <li>• Seguir dosagem do fabricante</li>
+                </ul>
+              </div>
+              <div className="bg-card p-4 rounded-lg border border-border">
+                <p className="font-medium text-foreground mb-1">Espessantes Naturais</p>
+                <ul className="text-sm text-foreground/70 space-y-1">
+                  <li>• <strong>Amido de milho:</strong> 1-2 colheres/200ml</li>
+                  <li>• <strong>Fécula de batata:</strong> mais suave</li>
+                  <li>• <strong>Gelatina:</strong> para líquidos gelados</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Tips */}
+          <div className="bg-destructive/10 p-4 rounded-lg border border-destructive/20">
+            <h4 className="font-semibold text-destructive mb-2">⚠️ Cuidados Importantes:</h4>
+            <ul className="text-sm text-foreground/80 space-y-1">
+              <li>• A consistência deve ser prescrita por fonoaudiólogo após avaliação</li>
+              <li>• Teste a consistência antes de servir - use o "teste da colher"</li>
+              <li>• Líquidos muito espessos podem causar desidratação</li>
+              <li>• Reavaliar periodicamente - a disfagia pode melhorar ou piorar</li>
+              <li>• Mantenha o idoso sentado a 90° durante e após as refeições</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <AlertBox type="warning" title="Atenção">
+        A consistência ideal varia para cada pessoa. Sempre consulte um fonoaudiólogo para avaliação da deglutição antes de modificar a dieta.
+      </AlertBox>
+
       {/* Recipe 1 */}
       <div className="bg-card rounded-xl overflow-hidden border-2 border-primary/20">
         <div className="bg-primary/10 p-4">

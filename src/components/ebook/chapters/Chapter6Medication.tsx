@@ -31,22 +31,14 @@ const Chapter6Medication = () => {
         <p className="text-foreground/80 leading-relaxed mb-4">
           Use dispensadores eletrônicos ou alarmes no celular. <strong className="text-primary">Evite confiar apenas na memória</strong>.
         </p>
-        <div className="grid md:grid-cols-2 gap-4 mb-4">
-          <div className="bg-accent/50 p-4 rounded-lg">
-            <h4 className="font-semibold text-foreground mb-2">📱 Aplicativos Recomendados</h4>
-            <ul className="space-y-1 text-sm text-foreground/80">
-              <li>• Medisafe (gratuito, alertas inteligentes)</li>
-              <li>• CareZone (compartilha com familiares)</li>
-              <li>• Mango Health (gamificação)</li>
-            </ul>
-          </div>
-          <div className="bg-accent/50 p-4 rounded-lg">
-            <h4 className="font-semibold text-foreground mb-2">🔧 Dispositivos Físicos</h4>
-            <ul className="space-y-1 text-sm text-foreground/80">
-              <li>• Porta-comprimidos com alarme</li>
-              <li>• Dispensadores automáticos programáveis</li>
-              <li>• Caixas com bloqueio por horário</li>
-            </ul>
+        <div className="bg-accent/50 p-4 rounded-lg mb-4">
+          <h4 className="font-semibold text-foreground mb-2">📱 Aplicativo Recomendado</h4>
+          <div className="flex items-center gap-3">
+            <span className="text-3xl">💊</span>
+            <div>
+              <p className="font-semibold text-primary">App Cuidame</p>
+              <p className="text-sm text-foreground/80">Controle completo de medicamentos com alertas e compartilhamento familiar</p>
+            </div>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">

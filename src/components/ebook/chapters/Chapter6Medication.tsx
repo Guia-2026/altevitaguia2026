@@ -2,6 +2,7 @@ import { AlertTriangle, Pill, Calendar, Clock, FileText, ShieldAlert, Droplets, 
 import AlertBox from "../AlertBox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import cuidameIcon from "@/assets/cuidame-icon.png";
 
 const Chapter6Medication = () => {
   return (
@@ -40,8 +41,8 @@ const Chapter6Medication = () => {
         {/* Cuidame Hero */}
         <div className="bg-card rounded-xl p-6 border border-primary/20 mb-6">
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span className="text-4xl">💊</span>
+            <div className="w-16 h-16 rounded-2xl bg-primary flex items-center justify-center p-3">
+              <img src={cuidameIcon} alt="Cuidame" className="w-full h-full object-contain" />
             </div>
             <div>
               <h4 className="text-2xl font-bold text-primary">App Cuidame</h4>

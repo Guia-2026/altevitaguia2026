@@ -1,5 +1,6 @@
 import AlertBox from "../AlertBox";
 import SectionCard from "../SectionCard";
+import EnergyQuiz from "../EnergyQuiz";
 
 type Audience = "Alzheimer" | "Parkinson" | "Ambos";
 
@@ -320,6 +321,22 @@ const Chapter9Activities = () => {
           <Tip>
             Evite avaliações; elogie o processo (“gostei das cores que você escolheu”).
           </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Quiz de Energia */}
+      <div className="border-2 border-primary/30 rounded-xl bg-gradient-to-br from-primary/5 to-transparent">
+        <SectionCard
+          title="Avaliação Rápida de Energia"
+          subtitle="Descubra qual atividade é ideal para hoje"
+          icon={<span className="text-2xl">⚡</span>}
+          className="border-0 bg-transparent"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Responda 4 perguntas rápidas sobre como está o dia e receba uma <strong className="text-primary">sugestão personalizada</strong> de atividades.
+          </p>
+          
+          <EnergyQuiz />
         </SectionCard>
       </div>
 

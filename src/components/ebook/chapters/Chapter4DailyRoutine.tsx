@@ -1,6 +1,6 @@
 import { CheckCircle } from "lucide-react";
 import AlertBox from "../AlertBox";
-import feedingCare from "@/assets/feeding-care.png";
+import dailyRoutineCare from "@/assets/daily-routine-care.jpg";
 
 const Chapter4DailyRoutine = () => {
   return (
@@ -64,9 +64,9 @@ const Chapter4DailyRoutine = () => {
 
         <div className="overflow-hidden rounded-xl border border-border mb-6">
           <img 
-            src={feedingCare} 
-            alt="Talheres adaptados e postura correta para alimentação" 
-            className="w-full h-40 object-contain bg-muted p-4"
+            src={dailyRoutineCare} 
+            alt="Cuidador auxiliando idoso durante refeição com talheres adaptados" 
+            className="w-full h-48 object-cover"
           />
         </div>
         

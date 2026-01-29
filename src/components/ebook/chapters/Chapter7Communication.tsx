@@ -1,6 +1,52 @@
+import { useState } from "react";
 import AlertBox from "../AlertBox";
+import { Checkbox } from "@/components/ui/checkbox";
+
+const alzheimerItems = [
+  "Não corrigi a realidade dele",
+  "Validei a emoção primeiro",
+  "Usei frases curtas e simples",
+  "Tom de voz calmo e acolhedor",
+  "Redirecionei com atividade prazerosa",
+  "Ofereci apenas 2 opções de escolha",
+  "Usei comunicação não-verbal (gestos, toque)",
+  "Reduzi estímulos durante agitação",
+];
+
+const parkinsonItems = [
+  "Esperei 10 segundos pela resposta",
+  "Não completei as frases por ele",
+  "Verifiquei se é período ON ou OFF",
+  "Estimulei a falar mais alto",
+  "No freezing: usei comandos rítmicos",
+  "Não puxei durante congelamento",
+  "Lembrei que rosto neutro ≠ desinteresse",
+  "Fiz exercícios de voz junto com ele",
+];
 
 const Chapter7Communication = () => {
+  const [alzheimerChecked, setAlzheimerChecked] = useState<boolean[]>(
+    new Array(alzheimerItems.length).fill(false)
+  );
+  const [parkinsonChecked, setParkinsonChecked] = useState<boolean[]>(
+    new Array(parkinsonItems.length).fill(false)
+  );
+
+  const toggleAlzheimer = (index: number) => {
+    const newChecked = [...alzheimerChecked];
+    newChecked[index] = !newChecked[index];
+    setAlzheimerChecked(newChecked);
+  };
+
+  const toggleParkinson = (index: number) => {
+    const newChecked = [...parkinsonChecked];
+    newChecked[index] = !newChecked[index];
+    setParkinsonChecked(newChecked);
+  };
+
+  const alzheimerProgress = alzheimerChecked.filter(Boolean).length;
+  const parkinsonProgress = parkinsonChecked.filter(Boolean).length;
+
   return (
     <div className="space-y-8">
       {/* Alzheimer Communication */}
@@ -403,94 +449,90 @@ const Chapter7Communication = () => {
       {/* Quick Print Checklist */}
       <div className="bg-card rounded-xl p-6 border-2 border-dashed border-primary/40 print:border-solid">
         <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">🖨️</span>
+          <span className="text-3xl">✅</span>
           <div>
-            <h3 className="text-xl font-bold text-primary">Checklist Rápido de Comunicação</h3>
-            <p className="text-sm text-muted-foreground">Recorte e cole no posto de enfermagem</p>
+            <h3 className="text-xl font-bold text-primary">Checklist Interativo de Comunicação</h3>
+            <p className="text-sm text-muted-foreground">Marque os itens conforme você aplicar cada técnica</p>
           </div>
         </div>
         
         <div className="grid md:grid-cols-2 gap-6">
           {/* Alzheimer Checklist */}
           <div className="bg-primary/5 p-4 rounded-lg border border-primary/20">
-            <h4 className="font-bold text-primary mb-3 flex items-center gap-2">
-              🧠 ALZHEIMER
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Não corrigi a realidade dele</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Validei a emoção primeiro</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Usei frases curtas e simples</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Tom de voz calmo e acolhedor</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Redirecionei com atividade prazerosa</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Ofereci apenas 2 opções de escolha</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Usei comunicação não-verbal (gestos, toque)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Reduzi estímulos durante agitação</span>
-              </li>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="font-bold text-primary flex items-center gap-2">
+                🧠 ALZHEIMER
+              </h4>
+              <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+                {alzheimerProgress}/{alzheimerItems.length}
+              </span>
+            </div>
+            <ul className="space-y-3 text-sm">
+              {alzheimerItems.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <Checkbox
+                    id={`alzheimer-${index}`}
+                    checked={alzheimerChecked[index]}
+                    onCheckedChange={() => toggleAlzheimer(index)}
+                    className="mt-0.5"
+                  />
+                  <label
+                    htmlFor={`alzheimer-${index}`}
+                    className={`cursor-pointer transition-all ${
+                      alzheimerChecked[index] 
+                        ? "line-through text-muted-foreground" 
+                        : "text-foreground/80"
+                    }`}
+                  >
+                    {item}
+                  </label>
+                </li>
+              ))}
             </ul>
+            {alzheimerProgress === alzheimerItems.length && (
+              <div className="mt-3 p-2 bg-primary/20 rounded text-center text-xs text-primary font-medium">
+                🎉 Excelente! Todas as técnicas aplicadas!
+              </div>
+            )}
           </div>
 
           {/* Parkinson Checklist */}
           <div className="bg-secondary/10 p-4 rounded-lg border border-secondary/30">
-            <h4 className="font-bold text-secondary-foreground mb-3 flex items-center gap-2">
-              🤲 PARKINSON
-            </h4>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Esperei 10 segundos pela resposta</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Não completei as frases por ele</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Verifiquei se é período ON ou OFF</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Estimulei a falar mais alto</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>No freezing: usei comandos rítmicos</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Não puxei durante congelamento</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Lembrei que rosto neutro ≠ desinteresse</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary font-bold">□</span>
-                <span>Fiz exercícios de voz junto com ele</span>
-              </li>
+            <div className="flex items-center justify-between mb-3">
+              <h4 className="font-bold text-secondary-foreground flex items-center gap-2">
+                🤲 PARKINSON
+              </h4>
+              <span className="text-xs bg-secondary/30 text-secondary-foreground px-2 py-1 rounded-full">
+                {parkinsonProgress}/{parkinsonItems.length}
+              </span>
+            </div>
+            <ul className="space-y-3 text-sm">
+              {parkinsonItems.map((item, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <Checkbox
+                    id={`parkinson-${index}`}
+                    checked={parkinsonChecked[index]}
+                    onCheckedChange={() => toggleParkinson(index)}
+                    className="mt-0.5"
+                  />
+                  <label
+                    htmlFor={`parkinson-${index}`}
+                    className={`cursor-pointer transition-all ${
+                      parkinsonChecked[index] 
+                        ? "line-through text-muted-foreground" 
+                        : "text-foreground/80"
+                    }`}
+                  >
+                    {item}
+                  </label>
+                </li>
+              ))}
             </ul>
+            {parkinsonProgress === parkinsonItems.length && (
+              <div className="mt-3 p-2 bg-secondary/30 rounded text-center text-xs text-secondary-foreground font-medium">
+                🎉 Excelente! Todas as técnicas aplicadas!
+              </div>
+            )}
           </div>
         </div>
 

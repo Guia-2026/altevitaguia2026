@@ -76,12 +76,23 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               Quando o idoso pergunta a mesma coisa várias vezes:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Não demonstre irritação</strong> - para ele, é sempre a primeira vez</li>
               <li>• Use respostas curtas e consistentes</li>
-              <li>• Escreva a resposta em um cartão visível (ex: "Sua filha vem às 15h")</li>
+              <li>• Escreva a resposta em um cartão visível</li>
               <li>• Redirecione para uma atividade prazerosa</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> "Que horas minha filha vem?"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Ela vem às 15h, dona Maria. Está aqui no cartão, ó."</p>
+                <p className="text-foreground/70 italic">(5 minutos depois)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> "Que horas minha filha vem?"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Às 15h, dona Maria. Enquanto esperamos, que tal dobrarmos essas toalhas juntas?"</p>
+              </div>
+            </div>
           </div>
 
           {/* Non-verbal Communication */}
@@ -92,12 +103,22 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               Quando as palavras falham, o corpo comunica:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Contato visual</strong> - fique na altura dos olhos</li>
               <li>• <strong>Toque gentil</strong> - segure a mão, afague o ombro</li>
               <li>• <strong>Sorriso</strong> - expressões faciais transmitem segurança</li>
               <li>• <strong>Gestos</strong> - aponte, demonstre, use mímica</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE INTERAÇÃO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70 italic">(Idoso não responde verbalmente, parece confuso)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> <span className="italic">(abaixa-se, fica na altura dos olhos, sorri)</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> <span className="italic">(estende a mão com calma)</span> "Vem comigo?"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> <span className="italic">(aponta para a cadeira)</span> "Sentar aqui?" <span className="italic">(faz gesto de sentar)</span></p>
+              </div>
+            </div>
           </div>
 
           {/* Wandering Behavior */}
@@ -108,13 +129,23 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               Quando o idoso quer "ir embora" ou "voltar para casa":
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Nunca diga "você já está em casa"</strong> - causa mais angústia</li>
               <li>• Valide: "Você sente saudade de casa, né?"</li>
               <li>• Ofereça conforto físico (cobertor, chá quente)</li>
               <li>• Distraia com fotos antigas ou música familiar</li>
-              <li>• Camufle visualmente as saídas (cortinas, adesivos)</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> "Preciso ir embora! Minha mãe está me esperando!"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-muted-foreground line-through">Errado:</span> <span className="text-destructive/70">"Sua mãe já faleceu, o senhor mora aqui."</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">✓ Certo:</span> "O senhor sente muita falta dela, né? Me conta como ela era."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> "Ela fazia um bolo de laranja maravilhoso..."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Que delícia! Vamos tomar um chá quentinho enquanto o senhor me conta mais?"</p>
+              </div>
+            </div>
           </div>
 
           {/* Agitation */}
@@ -122,13 +153,24 @@ const Chapter7Communication = () => {
             <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
               😤 Durante Agitação
             </h4>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Reduza estímulos</strong> - desligue TV, diminua luzes</li>
               <li>• Fale baixo e devagar</li>
               <li>• Não toque sem avisar antes</li>
               <li>• Ofereça escolhas simples: "Quer sentar aqui ou ali?"</li>
               <li>• Se necessário, saia e volte em 5 minutos</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> <span className="italic">(agitado, andando de um lado pro outro)</span> "Cadê minhas coisas?! Vocês pegaram tudo!"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> <span className="italic">(voz baixa, calma)</span> "Seu José, estou aqui para ajudar."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Vou desligar essa TV. Muito barulho, né?"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "O senhor quer sentar nessa poltrona ou prefere a cadeira perto da janela?"</p>
+                <p className="text-foreground/70 italic">(Se continuar agitado: "Vou pegar uma água, já volto." - sai por 5 min)</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -193,13 +235,24 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               Quando o idoso "trava" e não consegue dar o próximo passo:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Comandos rítmicos:</strong> diga "MARCHA!" ou "Esquerda, direita, esquerda..."</li>
               <li>• <strong>Pistas visuais:</strong> coloque fita colorida no chão para ele mirar</li>
               <li>• <strong>Música com ritmo:</strong> marchas militares podem ajudar</li>
               <li>• <strong>Laser pointer:</strong> aponte para onde ele deve pisar</li>
               <li>• <strong>Nunca puxe</strong> - isso piora o congelamento</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE INTERAÇÃO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70 italic">(Seu Carlos para no meio do corredor, pés grudados no chão)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-muted-foreground line-through">Errado:</span> <span className="text-destructive/70">(puxar pelo braço) "Vamos, seu Carlos!"</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">✓ Cuidador:</span> "Seu Carlos, olhe para a fita amarela no chão."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Agora, comigo: MARCHA! Esquerda... direita... esquerda..."</p>
+                <p className="text-foreground/70 italic">(bate palmas no ritmo para ajudar)</p>
+              </div>
+            </div>
           </div>
 
           {/* Voice Exercises */}
@@ -210,12 +263,23 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               Práticas diárias para manter a voz audível:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Prolongar vogais:</strong> "AAAAAA" por 10 segundos</li>
               <li>• <strong>Contar alto:</strong> 1 a 10 com volume crescente</li>
               <li>• <strong>Ler em voz alta:</strong> jornais, poemas, orações</li>
               <li>• <strong>Cantar:</strong> músicas conhecidas fortalecem a voz</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE EXERCÍCIO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Dona Rosa, vamos fazer nosso exercício de voz? Junto comigo!"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "AAAAAAAAAA..." <span className="italic">(prolonga por 10 segundos)</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Agora a senhora! Bem alto, como se estivesse chamando alguém na cozinha!"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idosa:</span> <span className="italic">(voz baixa)</span> "aaaa..."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Mais forte! Imagina que eu estou lá no quintal! AAAA!"</p>
+              </div>
+            </div>
           </div>
 
           {/* ON/OFF Periods */}
@@ -226,12 +290,24 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               A medicação causa flutuações ao longo do dia:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Período ON:</strong> medicação funcionando - aproveite para atividades e conversas</li>
               <li>• <strong>Período OFF:</strong> medicação perdendo efeito - reduza demandas</li>
               <li>• Registre os horários de ON/OFF para otimizar a rotina</li>
               <li>• Evite conversas importantes no período OFF</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70 italic">(Período OFF - idoso está rígido, fala muito baixo)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-muted-foreground line-through">Errado:</span> <span className="text-destructive/70">"Seu João, precisamos conversar sobre as contas da casa."</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">✓ Cuidador:</span> "Seu João, vejo que está num momento difícil. Vou deixar o senhor descansar."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Daqui a pouco, quando estiver melhor, conversamos com calma, tá?"</p>
+                <p className="text-foreground/70 italic">(2 horas depois, período ON)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Seu João, o senhor está se sentindo melhor? Agora podemos conversar sobre o passeio de amanhã!"</p>
+              </div>
+            </div>
           </div>
 
           {/* Facial Expression */}
@@ -242,12 +318,51 @@ const Chapter7Communication = () => {
             <p className="text-sm text-foreground/80 mb-2">
               O rosto pode parecer "sem emoção", mas a pessoa sente tudo:
             </p>
-            <ul className="text-sm text-foreground/70 space-y-1">
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
               <li>• <strong>Não interprete como desinteresse</strong> - é sintoma da doença</li>
               <li>• Pergunte diretamente: "Você está gostando?"</li>
               <li>• Exercícios faciais: fazer caretas no espelho</li>
               <li>• Massagem facial pode ajudar a relaxar os músculos</li>
             </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70 italic">(Cuidador mostra fotos dos netos, idoso olha sem expressão)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-muted-foreground line-through">Errado:</span> <span className="italic text-destructive/70">(pensando: "Ele não se importa...")</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">✓ Cuidador:</span> "Seu Antônio, o senhor gostou de ver as fotos do Pedro?"</p>
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idoso:</span> <span className="italic">(voz baixa, rosto neutro)</span> "Gostei muito... ele cresceu..."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Que bom! Quer que eu imprima essa foto pra colocar no seu quarto?"</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Slow Speech */}
+          <div className="bg-accent/30 p-4 rounded-lg">
+            <h4 className="font-semibold text-foreground mb-2 flex items-center gap-2">
+              🐢 Fala Lenta (Bradifrenia)
+            </h4>
+            <p className="text-sm text-foreground/80 mb-2">
+              O tempo de resposta é mais longo, mas a inteligência está preservada:
+            </p>
+            <ul className="text-sm text-foreground/70 space-y-1 mb-3">
+              <li>• <strong>Aguarde em silêncio</strong> - conte até 10 mentalmente</li>
+              <li>• Não complete as frases por ele</li>
+              <li>• Mantenha contato visual enquanto espera</li>
+              <li>• Demonstre que está ouvindo com atenção</li>
+            </ul>
+            {/* Dialogue Example */}
+            <div className="bg-card p-3 rounded-lg border border-border">
+              <p className="text-xs font-semibold text-muted-foreground mb-2">💬 EXEMPLO DE DIÁLOGO:</p>
+              <div className="space-y-2 text-sm">
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Dona Lúcia, o que a senhora quer de lanche?"</p>
+                <p className="text-foreground/70 italic">(silêncio de 8 segundos)</p>
+                <p className="text-foreground/70"><span className="font-semibold text-muted-foreground line-through">Errado:</span> <span className="text-destructive/70">"Quer pão? Ou biscoito? Fruta? Vou trazer pão mesmo."</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">✓ Cuidador:</span> <span className="italic">(aguarda em silêncio, sorri, mantém contato visual)</span></p>
+                <p className="text-foreground/70"><span className="font-semibold text-destructive">Idosa:</span> <span className="italic">(após 12 segundos)</span> "Eu... quero... uma... maçã."</p>
+                <p className="text-foreground/70"><span className="font-semibold text-primary">Cuidador:</span> "Ótima escolha! Já trago a maçã, dona Lúcia."</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

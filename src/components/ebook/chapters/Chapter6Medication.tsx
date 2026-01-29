@@ -20,32 +20,195 @@ const Chapter6Medication = () => {
         </div>
       </div>
 
-      {/* Technology */}
-      <div className="bg-card rounded-xl p-6 border border-border">
+      {/* Technology - Cuidame App Showcase */}
+      <div className="bg-gradient-to-br from-primary/5 to-primary/10 rounded-xl p-6 border-2 border-primary/30">
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-            <Clock className="h-5 w-5 text-primary" />
+          <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center">
+            <Clock className="h-6 w-6 text-primary-foreground" />
           </div>
-          <h3 className="text-lg font-bold text-primary">Tecnologia de Dispensação 2026</h3>
+          <div>
+            <h3 className="text-xl font-bold text-primary">Tecnologia de Dispensação 2026</h3>
+            <p className="text-sm text-foreground/70">Gestão integrada de cuidados</p>
+          </div>
         </div>
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          Use dispensadores eletrônicos ou alarmes no celular. <strong className="text-primary">Evite confiar apenas na memória</strong>.
+        
+        <p className="text-foreground/80 leading-relaxed mb-6">
+          Em 2026, a gestão medicamentosa vai além de simples alarmes. 
+          <strong className="text-primary"> Evite confiar apenas na memória</strong> — use tecnologia que integra toda a equipe de cuidados.
         </p>
-        <div className="bg-accent/50 p-4 rounded-lg mb-4">
-          <h4 className="font-semibold text-foreground mb-2">📱 Aplicativo Recomendado</h4>
-          <div className="flex items-center gap-3">
-            <span className="text-3xl">💊</span>
+
+        {/* Cuidame Hero */}
+        <div className="bg-card rounded-xl p-6 border border-primary/20 mb-6">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+              <span className="text-4xl">💊</span>
+            </div>
             <div>
-              <p className="font-semibold text-primary">App Cuidame</p>
-              <p className="text-sm text-foreground/80">Controle completo de medicamentos com alertas e compartilhamento familiar</p>
+              <h4 className="text-2xl font-bold text-primary">App Cuidame</h4>
+              <p className="text-foreground/70">Gestão Integrada de Cuidados de Saúde</p>
+            </div>
+          </div>
+          
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            O <strong className="text-primary">Cuidame</strong> centraliza planejamento, execução, registro e comunicação do cuidado, 
+            reduzindo ruído operacional e aumentando <strong>segurança, rastreabilidade e qualidade</strong> do acompanhamento de saúde.
+          </p>
+
+          {/* Access Profiles */}
+          <div className="bg-accent/50 rounded-lg p-4 mb-4">
+            <h5 className="font-semibold text-foreground mb-3">👥 Perfis de Acesso</h5>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <div className="bg-card p-3 rounded-lg text-center">
+                <span className="text-2xl mb-1 block">👑</span>
+                <p className="text-xs font-semibold text-foreground">Administrador</p>
+              </div>
+              <div className="bg-card p-3 rounded-lg text-center">
+                <span className="text-2xl mb-1 block">👨‍⚕️</span>
+                <p className="text-xs font-semibold text-foreground">Gestor de Cuidados</p>
+              </div>
+              <div className="bg-card p-3 rounded-lg text-center">
+                <span className="text-2xl mb-1 block">🤝</span>
+                <p className="text-xs font-semibold text-foreground">Cuidador</p>
+              </div>
+              <div className="bg-card p-3 rounded-lg text-center">
+                <span className="text-2xl mb-1 block">❤️</span>
+                <p className="text-xs font-semibold text-foreground">Paciente</p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          <span className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-sm">📱 Alarmes no celular</span>
-          <span className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-sm">💊 Porta-comprimidos digital</span>
-          <span className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-sm">🔔 Lembretes de voz</span>
-          <span className="bg-primary/10 text-primary px-3 py-1.5 rounded-lg text-sm">📊 Relatórios de adesão</span>
+
+        {/* Main Features Grid */}
+        <h4 className="font-bold text-foreground mb-4 flex items-center gap-2">
+          <span className="text-xl">⚡</span>
+          Funcionalidades do Cuidame
+        </h4>
+        
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          {/* Prescrições */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">💊</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Prescrições Médicas</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Registro e acompanhamento de medicamentos, rotinas de cuidado e intervenções não farmacológicas, 
+              com <strong>horários, recorrência e observações</strong>.
+            </p>
+          </div>
+
+          {/* Agenda */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">📅</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Agenda e Escalas</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Gerenciamento de consultas, compromissos e escalas de cuidadores com 
+              <strong> visão em calendário e notificações automáticas</strong>.
+            </p>
+          </div>
+
+          {/* Registro de Cuidados */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">📋</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Execução e Registro</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Cuidadores registram atividades diárias, <strong>sinais vitais, evoluções e intercorrências</strong>, 
+              com histórico auditável completo.
+            </p>
+          </div>
+
+          {/* Acompanhamento Clínico */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">🏥</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Acompanhamento Clínico</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Centralização de registros de consultas, exames e avaliações de enfermagem, 
+              incluindo <strong>anexos e histórico organizado</strong>.
+            </p>
+          </div>
+
+          {/* Comunicação */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">💬</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Comunicação Integrada</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Chat em grupo entre cuidadores, enfermeiros e familiares, com 
+              <strong> troca de mensagens, arquivos e notificações</strong>.
+            </p>
+          </div>
+
+          {/* Conteúdos Educativos */}
+          <div className="bg-card rounded-xl p-5 border border-border hover:border-primary/30 transition-colors">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <span className="text-xl">🎓</span>
+              </div>
+              <h5 className="font-semibold text-foreground">Conteúdos Educativos</h5>
+            </div>
+            <p className="text-sm text-foreground/70 leading-relaxed">
+              Trilhas e aulas em vídeo atribuídas ao paciente conforme plano, 
+              com <strong>controle de progresso e certificação</strong>.
+            </p>
+          </div>
+        </div>
+
+        {/* Benefits */}
+        <div className="bg-primary/5 rounded-xl p-5 border border-primary/20">
+          <h5 className="font-bold text-primary mb-4 flex items-center gap-2">
+            <span className="text-xl">✨</span>
+            Benefícios para o Cuidado
+          </h5>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                <span className="text-2xl">🔒</span>
+              </div>
+              <h6 className="font-semibold text-foreground text-sm">Segurança</h6>
+              <p className="text-xs text-foreground/70 mt-1">Controle de permissões e rastreabilidade total</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                <span className="text-2xl">📊</span>
+              </div>
+              <h6 className="font-semibold text-foreground text-sm">Dashboard</h6>
+              <p className="text-xs text-foreground/70 mt-1">Indicadores de adesão e qualidade do cuidado</p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
+                <span className="text-2xl">👨‍👩‍👧‍👦</span>
+              </div>
+              <h6 className="font-semibold text-foreground text-sm">Família Conectada</h6>
+              <p className="text-xs text-foreground/70 mt-1">Todos informados em tempo real</p>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="mt-6 bg-card rounded-xl p-5 border-2 border-primary/30 text-center">
+          <p className="text-foreground/80 mb-2">
+            <strong className="text-primary">Reduza erros de medicação</strong> e mantenha toda a equipe alinhada.
+          </p>
+          <p className="text-sm text-foreground/70">
+            O Cuidame transforma a gestão de saúde em uma experiência organizada, segura e colaborativa.
+          </p>
         </div>
       </div>
 

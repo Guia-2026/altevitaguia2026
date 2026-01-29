@@ -1,6 +1,8 @@
 import AlertBox from "../AlertBox";
 import SectionCard from "../SectionCard";
 import EnergyQuiz from "../EnergyQuiz";
+import ActivitiesChecklist from "../ActivitiesChecklist";
+
 
 type Audience = "Alzheimer" | "Parkinson" | "Ambos";
 
@@ -538,6 +540,18 @@ const Chapter9Activities = () => {
           <Tip>
             Não existe "atraso" — pular dias ou semanas é normal. O bem-estar sempre vem antes da estimulação.
           </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Checklist Imprimível */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Checklist Imprimível"
+          subtitle="Resumo de todas as atividades e materiais"
+          icon={<span className="text-2xl">📋</span>}
+          className="border-0"
+        >
+          <ActivitiesChecklist showInteractive={true} />
         </SectionCard>
       </div>
 

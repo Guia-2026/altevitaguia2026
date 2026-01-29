@@ -323,6 +323,108 @@ const Chapter9Activities = () => {
         </SectionCard>
       </div>
 
+      {/* Plano Semanal */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Plano Semanal de Atividades"
+          subtitle="Combinações prontas para 7 dias"
+          icon={<span className="text-2xl">📅</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Escolha as atividades de acordo com o <strong className="text-primary">nível de energia do dia</strong>. Alterne entre curtas (10–15 min) e longas (20–30 min).
+          </p>
+
+          <div className="space-y-3">
+            {[
+              {
+                day: "Segunda",
+                emoji: "🌅",
+                short: "Movimento na Cadeira",
+                long: "Musicoterapia + Caixa de Memórias",
+              },
+              {
+                day: "Terça",
+                emoji: "🌿",
+                short: "Cuidar das Plantas",
+                long: "Cozinha Assistida (salada)",
+              },
+              {
+                day: "Quarta",
+                emoji: "🎨",
+                short: "Separação por Cores",
+                long: "Arte Simples (colagem)",
+              },
+              {
+                day: "Quinta",
+                emoji: "🎵",
+                short: "Musicoterapia (15 min)",
+                long: "Bingo Sensorial + Conversa",
+              },
+              {
+                day: "Sexta",
+                emoji: "🗂️",
+                short: "Cartões de Rotina",
+                long: "Cozinha Assistida (sanduíche)",
+              },
+              {
+                day: "Sábado",
+                emoji: "📦",
+                short: "Caixa de Memórias",
+                long: "Arte + Musicoterapia",
+              },
+              {
+                day: "Domingo",
+                emoji: "☀️",
+                short: "Movimento Guiado",
+                long: "Mini-jardinagem + Conversa",
+              },
+            ].map((item) => (
+              <div
+                key={item.day}
+                className="bg-accent/50 p-4 rounded-lg grid grid-cols-1 md:grid-cols-[120px_1fr_1fr] gap-2 md:gap-4 items-center"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{item.emoji}</span>
+                  <span className="font-semibold text-foreground">{item.day}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-primary/10 text-primary font-medium">
+                    Curta
+                  </span>
+                  <span className="text-xs text-foreground/80">{item.short}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs px-2 py-0.5 rounded bg-primary/20 text-primary font-medium">
+                    Longa
+                  </span>
+                  <span className="text-xs text-foreground/80">{item.long}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 grid md:grid-cols-2 gap-4">
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-primary mb-2">🔋 Dia de baixa energia</p>
+              <p className="text-xs text-foreground/80">
+                Escolha apenas a atividade <strong>curta</strong>. Se necessário, divida em 2 blocos de 5 min com pausa.
+              </p>
+            </div>
+            <div className="bg-primary/5 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-primary mb-2">⚡ Dia de boa energia</p>
+              <p className="text-xs text-foreground/80">
+                Faça a curta pela manhã e a longa à tarde, respeitando horários de medicação e refeições.
+              </p>
+            </div>
+          </div>
+
+          <Tip>
+            Adapte livremente: se a pessoa preferir repetir a mesma atividade vários dias, tudo bem — o importante é engajar sem forçar.
+          </Tip>
+        </SectionCard>
+      </div>
+
       <AlertBox type="tip" title="Dica Altevita">
         Adapte as atividades ao gosto pessoal e ao dia (energia, humor, sono). O importante é estimular de forma prazerosa, sem pressão por resultados.
       </AlertBox>

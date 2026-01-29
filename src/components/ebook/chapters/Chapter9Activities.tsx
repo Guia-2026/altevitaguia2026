@@ -1,115 +1,334 @@
 import AlertBox from "../AlertBox";
+import SectionCard from "../SectionCard";
+
+type Audience = "Alzheimer" | "Parkinson" | "Ambos";
+
+const AudienceBadge = ({ audience }: { audience: Audience }) => {
+  const label =
+    audience === "Ambos" ? "Para Alzheimer e Parkinson" : `Especialmente para ${audience}`;
+
+  return <p className="text-sm text-muted-foreground">{label}</p>;
+};
+
+const Tip = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="bg-primary/5 p-4 rounded-lg">
+      <p className="text-sm text-primary font-medium">💡 {children}</p>
+    </div>
+  );
+};
 
 const Chapter9Activities = () => {
   return (
     <div className="space-y-8">
       {/* Memory Box - Alzheimer */}
-      <div className="bg-card rounded-xl p-6 border-2 border-primary/20">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">📦</span>
-          <div>
-            <h3 className="text-xl font-bold text-primary">Caixa de Memórias</h3>
-            <p className="text-sm text-muted-foreground">Especialmente para Alzheimer</p>
-          </div>
-        </div>
-        
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          Reúna objetos sensoriais da história do residente:
-        </p>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-          <div className="bg-accent/50 p-3 rounded-lg text-center">
-            <span className="text-2xl">🌸</span>
-            <p className="text-xs text-foreground/80 mt-1">Perfume antigo</p>
-          </div>
-          <div className="bg-accent/50 p-3 rounded-lg text-center">
-            <span className="text-2xl">🔧</span>
-            <p className="text-xs text-foreground/80 mt-1">Ferramentas</p>
-          </div>
-          <div className="bg-accent/50 p-3 rounded-lg text-center">
-            <span className="text-2xl">🧵</span>
-            <p className="text-xs text-foreground/80 mt-1">Tecidos</p>
-          </div>
-          <div className="bg-accent/50 p-3 rounded-lg text-center">
-            <span className="text-2xl">📷</span>
-            <p className="text-xs text-foreground/80 mt-1">Fotos antigas</p>
-          </div>
-        </div>
-        
-        <div className="bg-primary/5 p-4 rounded-lg">
-          <p className="text-sm text-primary font-medium">
-            💡 O tato e olfato acessam memórias que a visão não alcança.
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Caixa de Memórias"
+          subtitle="Especialmente para Alzheimer"
+          icon={<span className="text-2xl">📦</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Reúna objetos sensoriais ligados à história da pessoa:
           </p>
-        </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+            {[
+              { emoji: "🌸", label: "Perfume/cheiros" },
+              { emoji: "🔧", label: "Ferramentas" },
+              { emoji: "🧵", label: "Tecidos" },
+              { emoji: "📷", label: "Fotos antigas" },
+            ].map((item) => (
+              <div key={item.label} className="bg-accent/50 p-3 rounded-lg text-center">
+                <span className="text-2xl">{item.emoji}</span>
+                <p className="text-xs text-foreground/80 mt-1">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <Tip>O tato e o olfato acessam memórias que a visão nem sempre alcança.</Tip>
+        </SectionCard>
       </div>
 
       {/* Music Therapy - Both */}
-      <div className="bg-card rounded-xl p-6 border-2 border-primary/20">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">🎵</span>
-          <div>
-            <h3 className="text-xl font-bold text-primary">Musicoterapia</h3>
-            <p className="text-sm text-muted-foreground">Para Alzheimer e Parkinson</p>
-          </div>
-        </div>
-        
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          Crie playlists com músicas da juventude do residente (<strong className="text-primary">15 aos 25 anos</strong>).
-        </p>
-        
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-accent/50 p-4 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xl">🤲</span>
-              <h4 className="font-semibold text-foreground text-sm">Parkinson</h4>
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Musicoterapia"
+          subtitle="Para Alzheimer e Parkinson"
+          icon={<span className="text-2xl">🎵</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Crie playlists com músicas marcantes da juventude (em geral, <strong className="text-primary">15 a 25 anos</strong>).
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">🤲</span>
+                <h4 className="font-semibold text-foreground text-sm">Parkinson</h4>
+              </div>
+              <p className="text-xs text-foreground/80">O ritmo ajuda na marcha, cadência e coordenação.</p>
             </div>
-            <p className="text-xs text-foreground/80">
-              O ritmo ajuda na marcha e coordenação motora.
-            </p>
-          </div>
-          <div className="bg-accent/50 p-4 rounded-lg">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-xl">🧠</span>
-              <h4 className="font-semibold text-foreground text-sm">Alzheimer</h4>
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">🧠</span>
+                <h4 className="font-semibold text-foreground text-sm">Alzheimer</h4>
+              </div>
+              <p className="text-xs text-foreground/80">Reduz agitação, melhora humor e evoca memórias emocionais.</p>
             </div>
-            <p className="text-xs text-foreground/80">
-              Acalma a agitação e resgata memórias emocionais.
-            </p>
           </div>
-        </div>
+
+          <Tip>
+            Se houver agitação, prefira músicas calmas e volume baixo; observe sinais de incômodo.
+          </Tip>
+        </SectionCard>
       </div>
 
       {/* Color Sorting - Parkinson */}
-      <div className="bg-card rounded-xl p-6 border-2 border-primary/20">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-3xl">🎨</span>
-          <div>
-            <h3 className="text-xl font-bold text-primary">Separação de Cores</h3>
-            <p className="text-sm text-muted-foreground">Especialmente para Parkinson</p>
-          </div>
-        </div>
-        
-        <p className="text-foreground/80 leading-relaxed mb-4">
-          Misture botões grandes coloridos e peça para separar por cor.
-        </p>
-        
-        <div className="flex justify-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-full bg-red-400 shadow-md" />
-          <div className="w-10 h-10 rounded-full bg-blue-400 shadow-md" />
-          <div className="w-10 h-10 rounded-full bg-yellow-400 shadow-md" />
-          <div className="w-10 h-10 rounded-full bg-green-400 shadow-md" />
-          <div className="w-10 h-10 rounded-full bg-purple-400 shadow-md" />
-        </div>
-        
-        <div className="bg-primary/5 p-4 rounded-lg">
-          <p className="text-sm text-primary font-medium">
-            💡 Treina a coordenação motora fina essencial para comer e se vestir.
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Separação por Categorias"
+          subtitle="Especialmente para Parkinson"
+          icon={<span className="text-2xl">🎨</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Misture itens grandes e seguros (pregadores, tampas, meias) e peça para separar por cor, tamanho ou tipo.
           </p>
-        </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
+            {[
+              { emoji: "🧦", label: "Meias" },
+              { emoji: "🧷", label: "Pregadores" },
+              { emoji: "🧴", label: "Tampas" },
+              { emoji: "🧩", label: "Peças" },
+            ].map((item) => (
+              <div key={item.label} className="bg-accent/50 p-3 rounded-lg text-center">
+                <span className="text-2xl">{item.emoji}</span>
+                <p className="text-xs text-foreground/80 mt-1">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <Tip>Treina coordenação motora fina útil para comer, abotoar e se vestir.</Tip>
+        </SectionCard>
+      </div>
+
+      {/* Sequência de Rotina com Cartões - Alzheimer */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Cartões de Rotina (Passo a Passo)"
+          subtitle="Especialmente para Alzheimer"
+          icon={<span className="text-2xl">🗂️</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Crie cartões simples com fotos/desenhos das etapas de uma tarefa (ex.: lavar as mãos, preparar um lanche, escovar os dentes).
+          </p>
+          <div className="grid md:grid-cols-3 gap-3 mb-4">
+            {[
+              { emoji: "🧼", label: "Higiene" },
+              { emoji: "🥪", label: "Lanche" },
+              { emoji: "🧥", label: "Vestuário" },
+            ].map((item) => (
+              <div key={item.label} className="bg-accent/50 p-4 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{item.emoji}</span>
+                  <p className="text-sm font-medium text-foreground">{item.label}</p>
+                </div>
+                <p className="text-xs text-foreground/80 mt-2">Use 3–6 passos, letras grandes e linguagem positiva.</p>
+              </div>
+            ))}
+          </div>
+          <Tip>
+            Dê apenas uma instrução por vez e espere; se a pessoa travar, aponte para o próximo cartão.
+          </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Cozinha Assistida - Ambos */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Cozinha Assistida (Com Tarefas Seguras)"
+          subtitle="Para Alzheimer e Parkinson"
+          icon={<span className="text-2xl">🍽️</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Transforme preparo de comida em atividade: escolher ingredientes, lavar folhas, mexer uma massa, montar um prato.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Ideias rápidas</p>
+              <ul className="text-xs text-foreground/80 mt-2 space-y-1">
+                <li>• Montar salada com cores diferentes</li>
+                <li>• Separar feijões/grãos em potes</li>
+                <li>• Montar sanduíche “por camadas”</li>
+              </ul>
+            </div>
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Adaptações</p>
+              <ul className="text-xs text-foreground/80 mt-2 space-y-1">
+                <li>• Utensílios com cabo mais grosso</li>
+                <li>• Tigelas antiderrapantes</li>
+                <li>• Pausas curtas e água por perto</li>
+              </ul>
+            </div>
+          </div>
+
+          <Tip>
+            Foque em tarefas seguras (sem fogo/facas afiadas) e na participação — não na perfeição do resultado.
+          </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Jardim/Plantas - Ambos */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Cuidados com Plantas (Mini-jardinagem)"
+          subtitle="Para Alzheimer e Parkinson"
+          icon={<span className="text-2xl">🪴</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Atividade sensorial e calma: regar, podar folhas secas, replantar mudas, organizar vasos.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-3 mb-4">
+            {[
+              { emoji: "💧", label: "Regar" },
+              { emoji: "🌱", label: "Replantar" },
+              { emoji: "🏷️", label: "Etiquetar" },
+            ].map((item) => (
+              <div key={item.label} className="bg-accent/50 p-4 rounded-lg text-center">
+                <span className="text-2xl">{item.emoji}</span>
+                <p className="text-xs text-foreground/80 mt-2">{item.label}</p>
+              </div>
+            ))}
+          </div>
+
+          <Tip>
+            Use vasos leves e um “tapete” ou bandeja para conter terra/água e reduzir risco de escorregões.
+          </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Alongamento na cadeira + coordenação - Parkinson */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Movimento Guiado na Cadeira"
+          subtitle="Especialmente para Parkinson"
+          icon={<span className="text-2xl">🪑</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Sessão curta (5–10 min) com música ritmada: bater palmas, tocar joelhos alternados, elevar calcanhares e pontas dos pés.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Sequência exemplo</p>
+              <ol className="text-xs text-foreground/80 mt-2 space-y-1 list-decimal pl-4">
+                <li>Palmas no ritmo (30–60s)</li>
+                <li>Mãos alternadas nos joelhos (30–60s)</li>
+                <li>Elevar calcanhares (10 repetições)</li>
+                <li>Elevar pontas dos pés (10 repetições)</li>
+              </ol>
+            </div>
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Segurança</p>
+              <ul className="text-xs text-foreground/80 mt-2 space-y-1">
+                <li>• Cadeira firme, com braços</li>
+                <li>• Pés bem apoiados</li>
+                <li>• Pausas se houver tontura</li>
+              </ul>
+            </div>
+          </div>
+
+          <Tip>O ritmo externo (música/contagem) ajuda a iniciar e manter o movimento.</Tip>
+        </SectionCard>
+      </div>
+
+      {/* Caça ao som / bingo sensorial - Alzheimer */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Bingo Sensorial (Som, Cheiro e Textura)"
+          subtitle="Especialmente para Alzheimer"
+          icon={<span className="text-2xl">👂</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Monte uma cartela simples com itens do dia a dia (café, sabonete, algodão, arroz, água). A pessoa identifica pelo som/cheiro/toque.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-3 mb-4">
+            {[
+              { emoji: "☕", label: "Cheiro" },
+              { emoji: "🖐️", label: "Textura" },
+              { emoji: "🔔", label: "Som" },
+            ].map((item) => (
+              <div key={item.label} className="bg-accent/50 p-4 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <span className="text-xl">{item.emoji}</span>
+                  <p className="text-sm font-medium text-foreground">{item.label}</p>
+                </div>
+                <p className="text-xs text-foreground/80 mt-2">Vale em dupla: um apresenta e o outro adivinha.</p>
+              </div>
+            ))}
+          </div>
+
+          <Tip>
+            Se houver confusão, ofereça alternativas (“é café ou sabonete?”) em vez de pergunta aberta.
+          </Tip>
+        </SectionCard>
+      </div>
+
+      {/* Arte com restrição suave - Ambos */}
+      <div className="border-2 border-primary/20 rounded-xl">
+        <SectionCard
+          title="Arte Simples (Sem “Certo ou Errado”)"
+          subtitle="Para Alzheimer e Parkinson"
+          icon={<span className="text-2xl">🖌️</span>}
+          className="border-0"
+        >
+          <p className="text-foreground/80 leading-relaxed mb-4">
+            Faça desenhos guiados por formas (círculos/linhas), colagem com revistas, pintura com cotonete ou esponja.
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Materiais fáceis</p>
+              <ul className="text-xs text-foreground/80 mt-2 space-y-1">
+                <li>• Folhas A4 e canetões grossos</li>
+                <li>• Revistas + cola em bastão</li>
+                <li>• Papel colorido pré-cortado</li>
+              </ul>
+            </div>
+            <div className="bg-accent/50 p-4 rounded-lg">
+              <p className="text-sm font-semibold text-foreground">Tema que engaja</p>
+              <ul className="text-xs text-foreground/80 mt-2 space-y-1">
+                <li>• “Minha casa” (objetos do lar)</li>
+                <li>• “Minha música” (capas/cores)</li>
+                <li>• “Minha infância” (fotos/recortes)</li>
+              </ul>
+            </div>
+          </div>
+
+          <Tip>
+            Evite avaliações; elogie o processo (“gostei das cores que você escolheu”).
+          </Tip>
+        </SectionCard>
       </div>
 
       <AlertBox type="tip" title="Dica Altevita">
-        Adapte as atividades ao gosto pessoal do residente. O importante é estimular de forma prazerosa, sem pressão por resultados.
+        Adapte as atividades ao gosto pessoal e ao dia (energia, humor, sono). O importante é estimular de forma prazerosa, sem pressão por resultados.
+      </AlertBox>
+
+      <AlertBox type="warning" title="Segurança em primeiro lugar">
+        Em casa, priorize ambientes bem iluminados e sem obstáculos. Evite objetos pequenos (risco de engasgo), superfícies escorregadias e tarefas com calor/corte sem supervisão.
       </AlertBox>
     </div>
   );

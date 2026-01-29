@@ -73,6 +73,53 @@ const Chapter5Nutrition = () => {
             </div>
           </div>
 
+          {/* Conversion Table */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-3">📏 Tabela de Conversão de Medidas:</h4>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="bg-primary/10">
+                    <th className="border border-border p-2 text-left text-foreground font-semibold">Consistência</th>
+                    <th className="border border-border p-2 text-center text-foreground font-semibold">Amido de Milho</th>
+                    <th className="border border-border p-2 text-center text-foreground font-semibold">Espessante Industrial</th>
+                    <th className="border border-border p-2 text-center text-foreground font-semibold">Gelatina</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="bg-card">
+                    <td className="border border-border p-2 text-foreground/80 font-medium">Nível 1 - Levemente Espesso</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">½ col. chá / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">½ medida / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">—</td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="border border-border p-2 text-foreground/80 font-medium">Nível 2 - Pouco Espesso</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">1 col. chá / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">1 medida / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">—</td>
+                  </tr>
+                  <tr className="bg-card">
+                    <td className="border border-border p-2 text-foreground/80 font-medium">Nível 3 - Moderadamente Espesso</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">1½ col. chá / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">1½ medida / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">3g / 100ml</td>
+                  </tr>
+                  <tr className="bg-muted/30">
+                    <td className="border border-border p-2 text-foreground/80 font-medium">Nível 4 - Extremamente Espesso</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">2 col. chá / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">2 medidas / 100ml</td>
+                    <td className="border border-border p-2 text-center text-foreground/70">5g / 100ml</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-muted-foreground mt-2 italic">
+              * Valores aproximados. Ajuste conforme necessário e sempre teste antes de servir. 
+              col. = colher | 1 medida = dosador do fabricante
+            </p>
+          </div>
+
           {/* Tips */}
           <div className="bg-destructive/10 p-4 rounded-lg border border-destructive/20">
             <h4 className="font-semibold text-destructive mb-2">⚠️ Cuidados Importantes:</h4>

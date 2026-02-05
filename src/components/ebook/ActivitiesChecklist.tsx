@@ -1,4 +1,5 @@
 import { Checkbox } from "@/components/ui/checkbox";
+import { useNavigate } from "react-router-dom";
 
 interface Activity {
   name: string;
@@ -33,6 +34,8 @@ interface ActivitiesChecklistProps {
 }
 
 const ActivitiesChecklist = ({ showInteractive = true }: ActivitiesChecklistProps) => {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-8 print:space-y-6">
       {/* Header */}
@@ -182,7 +185,7 @@ const ActivitiesChecklist = ({ showInteractive = true }: ActivitiesChecklistProp
       {/* Print Button - only shown on screen */}
       <div className="print:hidden flex justify-center">
         <button
-          onClick={() => window.print()}
+          onClick={() => navigate("/print-checklist")}
           className="bg-primary text-primary-foreground px-6 py-2 rounded-lg font-medium hover:bg-primary/90 transition-colors flex items-center gap-2"
         >
           <span>🖨️</span>

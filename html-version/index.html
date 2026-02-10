@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guia de Cuidado e Convivência | Grupo Altevita</title>
+  <meta name="description" content="Guia interativo de cuidado e segurança para familiares e cuidadores de idosos com Alzheimer e Parkinson. Grupo Altevita - Residenciais Geriátricos.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== COVER ===== -->
+  <div id="cover-view" class="cover-screen">
+    <div class="cover-card">
+      <div class="cover-card-inner">
+        <img src="https://altevitaguia2026.lovable.app/assets/logo-vertical-DjOJV24d.png" alt="Grupo Altevita" class="cover-logo">
+        <div class="cover-badge">Edição 2026</div>
+        <h1 class="cover-title">Guia de Cuidado<br>e Convivência</h1>
+        <div class="cover-divider"></div>
+        <p class="cover-subtitle">Alzheimer e Parkinson</p>
+        <p class="cover-sub2">Segurança, Tecnologia e Afeto na Rotina</p>
+        <p class="cover-quote">"Honrar a vida e respeitar a própria história."</p>
+        <div class="cover-btns">
+          <button class="btn btn-primary btn-block" onclick="showView('toc')">Começar a Leitura ›</button>
+        </div>
+        <p class="cover-format">Formato: Web/Digital Interativo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TABLE OF CONTENTS ===== -->
+  <div id="toc-view" class="toc-screen hidden">
+    <div class="container">
+      <div class="toc-header">
+        <div class="toc-label">📖 Sumário</div>
+        <h2 class="toc-title">Índice de Capítulos</h2>
+        <p class="toc-year">Edição 2026</p>
+        <div class="toc-divider"></div>
+      </div>
+      <div id="toc-list" class="toc-list"></div>
+    </div>
+  </div>
+
+  <!-- ===== CHAPTER VIEW ===== -->
+  <div id="chapter-view" class="chapter-screen hidden">
+    <header class="chapter-topbar">
+      <div class="chapter-topbar-inner">
+        <button id="ch-prev-top" class="btn btn-ghost" onclick="prevChapter()">‹ <span class="hide-mobile">Anterior</span></button>
+        <div style="display:flex;align-items:center;gap:0.75rem">
+          <button class="btn btn-ghost" onclick="showView('toc')">☰ <span class="hide-mobile">Índice</span></button>
+          <div id="ch-indicator" class="chapter-indicator"></div>
+        </div>
+        <button id="ch-next-top" class="btn btn-ghost" onclick="nextChapter()"><span class="hide-mobile">Próximo</span> ›</button>
+      </div>
+    </header>
+
+    <main class="chapter-main">
+      <div class="chapter-header">
+        <div id="ch-label" class="chapter-label"></div>
+        <div class="chapter-heading">
+          <div id="ch-icon" class="chapter-icon-box"></div>
+          <div>
+            <h1 id="ch-title" class="chapter-title"></h1>
+            <p id="ch-subtitle" class="chapter-subtitle"></p>
+          </div>
+        </div>
+        <div class="chapter-line"></div>
+      </div>
+      <div id="ch-content" class="chapter-content"></div>
+    </main>
+
+    <footer class="chapter-bottombar">
+      <div class="chapter-bottombar-inner">
+        <button id="ch-prev-bot" class="btn btn-outline" onclick="prevChapter()">‹ Capítulo Anterior</button>
+        <div id="ch-dots" class="chapter-dots"></div>
+        <button id="ch-next-bot" class="btn btn-primary" onclick="nextChapter()">Próximo Capítulo ›</button>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== BOOK END ===== -->
+  <div id="end-view" class="end-screen hidden">
+    <div class="end-content">
+      <div class="end-quote">
+        <div class="end-quote-icon">💡</div>
+        <p>"A tecnologia nos dá olhos onde não podemos estar, mas é o toque humano e a escuta ativa que transformam o cuidado em acolhimento."</p>
+        <small>— Dica do Especialista Altevita</small>
+      </div>
+      <img src="https://altevitaguia2026.lovable.app/assets/logo-vertical-DjOJV24d.png" alt="Grupo Altevita" class="end-logo">
+      <p style="font-size:1.125rem;font-weight:600">Residenciais Geriátricos</p>
+      <div class="end-info">
+        <p style="font-weight:500">www.grupoaltevita.com.br</p>
+        <p>@grupoaltevita</p>
+        <p style="margin-top:0.5rem">Brasília - DF</p>
+      </div>
+      <div class="end-social">
+        <a href="https://instagram.com/grupoaltevita" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📷</a>
+        <a href="https://facebook.com/grupoaltevita" target="_blank" rel="noopener noreferrer" aria-label="Facebook">📘</a>
+        <a href="https://grupoaltevita.com.br" target="_blank" rel="noopener noreferrer" aria-label="Website">🌐</a>
+      </div>
+      <div class="end-legal">
+        <strong>Aviso Legal:</strong> Este guia é informativo e não substitui aconselhamento médico profissional. Consulte sempre um neurologista ou geriatra.
+      </div>
+    </div>
+    <div class="end-nav">
+      <div class="end-nav-inner">
+        <button class="btn btn-outline" style="border-color:rgba(255,255,255,0.3);color:white" onclick="showView('toc')">📖 Ver Índice</button>
+        <button class="btn" style="background:white;color:var(--primary)" onclick="showView('cover')">🏠 Voltar à Capa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

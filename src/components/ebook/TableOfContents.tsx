@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { BookOpen, Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles, FileDown } from "lucide-react";
+import { BookOpen, Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles, FileDown, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import DarkModeToggle from "./DarkModeToggle";
@@ -10,18 +10,19 @@ interface Chapter {
   title: string;
   subtitle?: string;
   icon: React.ElementType;
+  readingTime: number; // minutes
 }
 
 const chapters: Chapter[] = [
-  { id: "introducao", number: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: Heart },
-  { id: "condicoes", number: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: Brain },
-  { id: "ambiente", number: 3, title: "O Ambiente Conectado", subtitle: "A Casa Segura", icon: Home },
-  { id: "rotina", number: 4, title: "Protocolos de Rotina Diária", subtitle: "Higiene, Vestuário e Alimentação", icon: ClipboardList },
-  { id: "nutricao", number: 5, title: "Nutrição", subtitle: "O Prazer de Comer (+ Receitas)", icon: UtensilsCrossed },
-  { id: "medicacao", number: 6, title: "Gestão Medicamentosa", subtitle: "Tecnologia e Cuidados 2026", icon: Pill },
-  { id: "comunicacao", number: 7, title: "Comunicação", subtitle: "Estratégias Distintas", icon: MessageCircle },
-  { id: "emergencias", number: 8, title: "Plano de Ação em Emergências", subtitle: "Fuga, Deambulação e Freezing", icon: AlertTriangle },
-  { id: "atividades", number: 9, title: "Atividades Cognitivas e Motoras", subtitle: "Estimulação e Bem-estar", icon: Sparkles },
+  { id: "introducao", number: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: Heart, readingTime: 3 },
+  { id: "condicoes", number: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: Brain, readingTime: 5 },
+  { id: "ambiente", number: 3, title: "O Ambiente Conectado", subtitle: "A Casa Segura", icon: Home, readingTime: 8 },
+  { id: "rotina", number: 4, title: "Protocolos de Rotina Diária", subtitle: "Higiene, Vestuário e Alimentação", icon: ClipboardList, readingTime: 10 },
+  { id: "nutricao", number: 5, title: "Nutrição", subtitle: "O Prazer de Comer (+ Receitas)", icon: UtensilsCrossed, readingTime: 8 },
+  { id: "medicacao", number: 6, title: "Gestão Medicamentosa", subtitle: "Tecnologia e Cuidados 2026", icon: Pill, readingTime: 12 },
+  { id: "comunicacao", number: 7, title: "Comunicação", subtitle: "Estratégias Distintas", icon: MessageCircle, readingTime: 10 },
+  { id: "emergencias", number: 8, title: "Plano de Ação em Emergências", subtitle: "Fuga, Deambulação e Freezing", icon: AlertTriangle, readingTime: 10 },
+  { id: "atividades", number: 9, title: "Atividades Cognitivas e Motoras", subtitle: "Estimulação e Bem-estar", icon: Sparkles, readingTime: 9 },
 ];
 
 interface TableOfContentsProps {
@@ -122,6 +123,13 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
                       {chapter.subtitle}
                     </p>
                   )}
+                  <div className={cn(
+                    "flex items-center gap-1 mt-1",
+                    isActive ? "text-primary-foreground/60" : "text-muted-foreground"
+                  )}>
+                    <Clock className="h-3 w-3" />
+                    <span className="text-[0.65rem] sm:text-xs">{chapter.readingTime} min de leitura</span>
+                  </div>
                 </div>
 
                 {/* Arrow */}

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import logoVertical from "@/assets/logo-vertical.png";
 import { ChevronRight, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DarkModeToggle from "./DarkModeToggle";
 
 interface BookCoverProps {
   onStart: () => void;
@@ -11,8 +12,13 @@ const BookCover = ({ onStart }: BookCoverProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent p-4">
-      <div className="relative w-full max-w-lg">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/5 via-background to-accent p-4 sm:p-6">
+      {/* Dark mode toggle */}
+      <div className="fixed top-4 right-4 z-50">
+        <DarkModeToggle />
+      </div>
+
+      <div className="relative w-full max-w-md">
         {/* Book shadow */}
         <div className="absolute inset-0 bg-foreground/10 rounded-2xl translate-x-2 translate-y-2 blur-sm" />
         
@@ -21,7 +27,7 @@ const BookCover = ({ onStart }: BookCoverProps) => {
           {/* Spine decoration */}
           <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-r from-primary/20 to-transparent" />
           
-          <div className="p-6 md:p-10 text-center">
+          <div className="p-6 sm:p-8 md:p-10 text-center">
             {/* Logo */}
             <div className="mb-5">
               <img 
@@ -38,7 +44,7 @@ const BookCover = ({ onStart }: BookCoverProps) => {
             
             {/* Title */}
             <div className="mb-4">
-              <h1 className="text-xl md:text-2xl font-bold text-primary mb-2 leading-tight">
+              <h1 className="text-xl sm:text-2xl font-bold text-primary mb-2 leading-tight">
                 Guia de Cuidado<br />e Convivência
               </h1>
               <div className="w-12 h-0.5 bg-primary mx-auto rounded-full mb-3" />
@@ -56,10 +62,10 @@ const BookCover = ({ onStart }: BookCoverProps) => {
             </p>
             
             {/* Start button */}
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               <Button 
                 onClick={onStart}
-                className="group w-full"
+                className="group w-full min-h-[48px] text-base"
               >
                 Começar a Leitura
                 <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
@@ -67,9 +73,8 @@ const BookCover = ({ onStart }: BookCoverProps) => {
               
               <Button 
                 variant="outline"
-                size="sm"
                 onClick={() => navigate("/print")}
-                className="gap-2"
+                className="gap-2 min-h-[44px]"
               >
                 <Printer className="h-3.5 w-3.5" />
                 Versão para Impressão / PDF

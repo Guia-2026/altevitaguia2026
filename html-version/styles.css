@@ -109,6 +109,7 @@ a { color: var(--primary); text-decoration: none; }
 .toc-item-text { flex: 1; min-width: 0; }
 .toc-item-title { font-weight: 600; color: var(--fg); font-size: 0.95rem; }
 .toc-item-sub { font-size: 0.8rem; color: var(--muted); margin-top: 0.125rem; }
+.toc-item-time { font-size: 0.7rem; color: var(--muted); margin-top: 0.25rem; opacity: 0.7; }
 .toc-item-dots { flex-shrink: 0; color: var(--muted); font-size: 0.875rem; }
 
 /* ===== CHAPTER ===== */

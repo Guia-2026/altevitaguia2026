@@ -1,15 +1,15 @@
 // Grupo Altevita - Guia de Cuidado 2026 - HTML Version (Synced with React)
 
 const chapters = [
-  { id: "introducao", num: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: "❤️" },
-  { id: "condicoes", num: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: "🧠" },
-  { id: "ambiente", num: 3, title: "O Ambiente Conectado", subtitle: "A Casa Segura", icon: "🏠" },
-  { id: "rotina", num: 4, title: "Protocolos de Rotina Diária", subtitle: "Higiene, Vestuário e Alimentação", icon: "📋" },
-  { id: "nutricao", num: 5, title: "Nutrição", subtitle: "O Prazer de Comer (+ Receitas)", icon: "🍽️" },
-  { id: "medicacao", num: 6, title: "Gestão Medicamentosa", subtitle: "Tecnologia e Cuidados 2026", icon: "💊" },
-  { id: "comunicacao", num: 7, title: "Comunicação", subtitle: "Estratégias Distintas", icon: "💬" },
-  { id: "emergencias", num: 8, title: "Plano de Ação em Emergências", subtitle: "Fuga, Deambulação e Freezing", icon: "⚠️" },
-  { id: "atividades", num: 9, title: "Atividades Cognitivas e Motoras", subtitle: "Estimulação e Bem-estar", icon: "✨" },
+  { id: "introducao", num: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: "❤️", readingTime: 3 },
+  { id: "condicoes", num: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: "🧠", readingTime: 5 },
+  { id: "ambiente", num: 3, title: "O Ambiente Conectado", subtitle: "A Casa Segura", icon: "🏠", readingTime: 8 },
+  { id: "rotina", num: 4, title: "Protocolos de Rotina Diária", subtitle: "Higiene, Vestuário e Alimentação", icon: "📋", readingTime: 10 },
+  { id: "nutricao", num: 5, title: "Nutrição", subtitle: "O Prazer de Comer (+ Receitas)", icon: "🍽️", readingTime: 8 },
+  { id: "medicacao", num: 6, title: "Gestão Medicamentosa", subtitle: "Tecnologia e Cuidados 2026", icon: "💊", readingTime: 12 },
+  { id: "comunicacao", num: 7, title: "Comunicação", subtitle: "Estratégias Distintas", icon: "💬", readingTime: 10 },
+  { id: "emergencias", num: 8, title: "Plano de Ação em Emergências", subtitle: "Fuga, Deambulação e Freezing", icon: "⚠️", readingTime: 10 },
+  { id: "atividades", num: 9, title: "Atividades Cognitivas e Motoras", subtitle: "Estimulação e Bem-estar", icon: "✨", readingTime: 9 },
 ];
 
 let currentView = "cover";
@@ -121,6 +121,7 @@ function buildTOC() {
       <div class="toc-item-text">
         <div class="toc-item-title">${ch.title}</div>
         ${ch.subtitle ? `<div class="toc-item-sub">${ch.subtitle}</div>` : ""}
+        <div class="toc-item-time">🕐 ${ch.readingTime} min de leitura</div>
       </div>
       <div class="toc-item-dots">•••</div>
     `;

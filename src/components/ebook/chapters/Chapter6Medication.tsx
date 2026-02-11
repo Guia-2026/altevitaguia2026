@@ -215,7 +215,7 @@ const Chapter6Medication = () => {
           
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a 
-              href="https://apps.apple.com/app/cuidame" 
+              href="https://apps.apple.com/br/app/cuidame-gestor-de-sa%C3%BAde/id6744027992" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"
@@ -230,7 +230,7 @@ const Chapter6Medication = () => {
             </a>
             
             <a 
-              href="https://play.google.com/store/apps/details?id=com.cuidame" 
+              href="https://play.google.com/store/apps/details?id=br.com.cuidame&hl=pt" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 bg-foreground text-background px-5 py-3 rounded-xl hover:opacity-90 transition-opacity"

@@ -1,5 +1,21 @@
 // Grupo Altevita - Guia de Cuidado 2026 - HTML Version (Synced with React)
 
+// ===== DARK MODE =====
+function toggleDarkMode() {
+  const isDark = document.documentElement.classList.toggle("dark");
+  localStorage.setItem("darkMode", isDark ? "true" : "false");
+  document.getElementById("dark-mode-icon").textContent = isDark ? "☀️" : "🌙";
+}
+
+function initDarkMode() {
+  const saved = localStorage.getItem("darkMode");
+  if (saved === "true") {
+    document.documentElement.classList.add("dark");
+    document.getElementById("dark-mode-icon").textContent = "☀️";
+  }
+}
+
+
 const chapters = [
   { id: "introducao", num: 1, title: "Introdução", subtitle: "A Era da Longevidade Inteligente", icon: "❤️", readingTime: 3 },
   { id: "condicoes", num: 2, title: "Entendendo as Condições", subtitle: "Alzheimer e Parkinson (Contexto 2026)", icon: "🧠", readingTime: 5 },
@@ -44,6 +60,10 @@ function renderChapter(idx) {
   document.getElementById("ch-title").textContent = ch.title;
   document.getElementById("ch-subtitle").textContent = ch.subtitle || "";
   document.getElementById("ch-subtitle").style.display = ch.subtitle ? "block" : "none";
+
+  // Progress bar
+  const progressPct = ((idx + 1) / total) * 100;
+  document.getElementById("ch-progress-fill").style.width = `${progressPct}%`;
 
   document.getElementById("ch-prev-top").disabled = idx === 0;
   document.getElementById("ch-next-top").disabled = idx === total - 1;
@@ -597,6 +617,47 @@ function getChapterContent(id) {
         <div class="tip-box" style="margin-top:1rem"><p>💡 Adapte livremente: se a pessoa preferir repetir a mesma atividade vários dias, tudo bem — o importante é engajar sem forçar.</p></div>
       </div>
 
+      <!-- Plano para Semanas Atípicas -->
+      <div class="content-card content-card-destructive">
+        <div class="content-heading"><span class="content-heading-icon">🩺</span><div><h3 class="text-fg">Plano para Semanas Atípicas</h3><p class="content-heading-sub">Consultas médicas, exames ou dias de fadiga intensa</p></div></div>
+        <p style="color:rgba(64,64,64,0.8);margin-bottom:1rem">Quando há <strong style="color:var(--primary)">consultas, exames ou recuperação</strong>, reduza a intensidade e priorize o descanso.</p>
+        <div style="background:rgba(220,53,69,0.05);padding:1rem;border-radius:0.5rem;margin-bottom:1rem">
+          <div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.75rem"><span style="font-size:1.25rem">🏥</span><p style="font-weight:600;font-size:0.875rem">Dia de Consulta/Exame</p></div>
+          <div class="content-grid content-grid-2">
+            <div class="content-card" style="padding:0.75rem"><p style="font-size:0.75rem;font-weight:500;color:var(--primary);margin-bottom:0.25rem">Antes da consulta</p><p style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Apenas rotina básica (higiene, alimentação). Evite atividades que cansem ou agitem.</p></div>
+            <div class="content-card" style="padding:0.75rem"><p style="font-size:0.75rem;font-weight:500;color:var(--primary);margin-bottom:0.25rem">Depois da consulta</p><p style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Musicoterapia calma (5–10 min) ou simplesmente descanso com companhia tranquila.</p></div>
+          </div>
+        </div>
+        <p style="font-weight:600;font-size:0.875rem;margin-bottom:0.75rem">📋 Plano Semanal Reduzido</p>
+        <div style="display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1rem">
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>🌅</span><span style="font-weight:500;font-size:0.875rem">Segunda</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Música calma (10 min)</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Sem atividade motora</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>🩺</span><span style="font-weight:500;font-size:0.875rem">Terça</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Dia de consulta — descanso</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Apenas rotina básica</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>💤</span><span style="font-weight:500;font-size:0.875rem">Quarta</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Recuperação — companhia tranquila</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Conversa leve, fotos</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>🪴</span><span style="font-weight:500;font-size:0.875rem">Quinta</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Regar plantas (5 min)</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Atividade mínima</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>🎵</span><span style="font-weight:500;font-size:0.875rem">Sexta</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Musicoterapia (15 min)</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Se houver disposição</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>📦</span><span style="font-weight:500;font-size:0.875rem">Sábado</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Caixa de Memórias (10 min)</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Sentado, sem esforço</span></div>
+          <div class="plan-row"><div style="display:flex;align-items:center;gap:0.5rem"><span>☀️</span><span style="font-weight:500;font-size:0.875rem">Domingo</span></div><span style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Conversa + álbum de fotos</span><span style="font-size:0.75rem;color:var(--muted);font-style:italic">Atividade social leve</span></div>
+        </div>
+        <div style="background:rgba(220,53,69,0.1);padding:1rem;border-radius:0.5rem;margin-bottom:1rem">
+          <p style="font-weight:600;color:var(--destructive);font-size:0.875rem;margin-bottom:0.5rem">⚠️ Sinais para suspender atividades</p>
+          <div class="content-grid content-grid-2"><ul style="font-size:0.75rem;color:rgba(64,64,64,0.8)"><li>• Sonolência excessiva ou confusão</li><li>• Irritabilidade ou recusa persistente</li><li>• Dor ou desconforto físico</li></ul><ul style="font-size:0.75rem;color:rgba(64,64,64,0.8)"><li>• Febre ou mal-estar geral</li><li>• Efeitos colaterais de medicação</li><li>• Noite mal dormida</li></ul></div>
+        </div>
+        <div class="content-grid content-grid-2">
+          <div style="background:var(--primary-bg);padding:1rem;border-radius:0.5rem"><p style="font-size:0.875rem;font-weight:600;color:var(--primary);margin-bottom:0.5rem">💊 Semana com nova medicação</p><p style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Observe reações nos primeiros dias. Mantenha apenas atividades passivas (música, companhia) até ajuste.</p></div>
+          <div style="background:var(--primary-bg);padding:1rem;border-radius:0.5rem"><p style="font-size:0.875rem;font-weight:600;color:var(--primary);margin-bottom:0.5rem">😴 Período de maior fadiga</p><p style="font-size:0.75rem;color:rgba(64,64,64,0.8)">Prefira atividades sentadas, curtas (5–10 min), com pausas. Respeite cochilos e hidratação.</p></div>
+        </div>
+        <div class="tip-box" style="margin-top:1rem"><p>💡 Não existe "atraso" — pular dias ou semanas é normal. O bem-estar sempre vem antes da estimulação.</p></div>
+      </div>
+
+      <!-- Download Checklist PDF -->
+      <div class="content-card content-card-primary" style="text-align:center">
+        <div class="content-heading" style="justify-content:center"><span class="content-heading-icon">📋</span><div><h3>Checklist Imprimível</h3><p class="content-heading-sub">Resumo de todas as atividades e materiais</p></div></div>
+        <p style="color:rgba(64,64,64,0.8);margin-bottom:1.5rem">Baixe o checklist completo em PDF para imprimir e usar no dia a dia.</p>
+        <a href="assets/Checklist_de_Atividades.pdf" download="Checklist_de_Atividades.pdf" class="btn-download">
+          📥 Baixar Checklist em PDF
+        </a>
+      </div>
+
       <div class="alert-box alert-tip"><p class="alert-title">💡 Dica Altevita</p><p class="alert-text">Adapte as atividades ao gosto pessoal e ao dia (energia, humor, sono). O importante é estimular de forma prazerosa, sem pressão por resultados.</p></div>
       <div class="alert-box alert-warning"><p class="alert-title">⚠️ Segurança em primeiro lugar</p><p class="alert-text">Em casa, priorize ambientes bem iluminados e sem obstáculos. Evite objetos pequenos (risco de engasgo), superfícies escorregadias e tarefas com calor/corte sem supervisão.</p></div>
     `,
@@ -607,6 +668,7 @@ function getChapterContent(id) {
 
 // Init
 document.addEventListener("DOMContentLoaded", () => {
+  initDarkMode();
   buildTOC();
   showView("cover");
 });

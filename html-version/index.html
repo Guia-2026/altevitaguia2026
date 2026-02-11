@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Guia de Cuidado e Convivência | Grupo Altevita</title>
   <meta name="description" content="Guia interativo de cuidado e segurança para familiares e cuidadores de idosos com Alzheimer e Parkinson. Grupo Altevita - Residenciais Geriátricos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- Dark Mode Toggle (floating) -->
+  <button id="dark-mode-toggle" class="dark-mode-btn" onclick="toggleDarkMode()" aria-label="Alternar modo escuro">
+    <span id="dark-mode-icon">🌙</span>
+  </button>
 
   <!-- ===== COVER ===== -->
   <div id="cover-view" class="cover-screen">
     <div class="cover-card">
       <div class="cover-card-inner">
-        <img src="assets/logo-vertical.png" alt="Grupo Altevita" class="cover-logo">
+        <img src="assets/logo-vertical.png" alt="Grupo Altevita" class="cover-logo" loading="lazy">
         <div class="cover-badge">Edição 2026</div>
         <h1 class="cover-title">Guia de Cuidado<br>e Convivência</h1>
         <div class="cover-divider"></div>
@@ -52,6 +60,10 @@
         </div>
         <button id="ch-next-top" class="btn btn-ghost" onclick="nextChapter()"><span class="hide-mobile">Próximo</span> ›</button>
       </div>
+      <!-- Progress bar -->
+      <div class="chapter-progress-bar">
+        <div id="ch-progress-fill" class="chapter-progress-fill"></div>
+      </div>
     </header>
 
     <main class="chapter-main">
@@ -86,7 +98,7 @@
         <p>"A tecnologia nos dá olhos onde não podemos estar, mas é o toque humano e a escuta ativa que transformam o cuidado em acolhimento."</p>
         <small>— Dica do Especialista Altevita</small>
       </div>
-      <img src="assets/logo-vertical.png" alt="Grupo Altevita" class="end-logo">
+      <img src="assets/logo-vertical.png" alt="Grupo Altevita" class="end-logo" loading="lazy">
       <p style="font-size:1.125rem;font-weight:600">Residenciais Geriátricos</p>
       <div class="end-info">
         <p style="font-weight:500">www.grupoaltevita.com.br</p>

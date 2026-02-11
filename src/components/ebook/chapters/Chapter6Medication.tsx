@@ -356,7 +356,7 @@ const Chapter6Medication = () => {
               </TableRow>
               <TableRow>
                 <TableCell className="font-medium">Levodopa</TableCell>
-                <TableCell>Proteínas, Ferro, Vitamina B6</TableCell>
+                <TableCell>Proteínas em excesso, Ferro</TableCell>
                 <TableCell className="text-destructive">Reduz absorção</TableCell>
               </TableRow>
               <TableRow>
@@ -468,7 +468,7 @@ const Chapter6Medication = () => {
                   <ul className="text-sm space-y-1">
                     <li>• Anti-inflamatórios</li>
                     <li>• Metformina</li>
-                    <li>• Suplementos de ferro</li>
+                    <li>• Ferro (se causar enjoo; idealmente em jejum com vitamina C)</li>
                     <li>• Alguns antibióticos</li>
                   </ul>
                 </div>

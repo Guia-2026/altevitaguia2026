@@ -74,7 +74,7 @@ const Chapter8Emergencies = () => {
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
-                <span>Coloque espelhos nas portas (confunde a percepção)</span>
+                <span>Camufle maçanetas com capas da cor da porta (reduz estímulo de saída)</span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />

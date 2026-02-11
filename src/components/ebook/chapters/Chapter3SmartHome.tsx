@@ -344,7 +344,7 @@ const Chapter3SmartHome = () => {
             <div>
               <h5 className="font-semibold text-foreground">Circulação</h5>
               <p className="text-sm text-foreground/80">
-                Mantenha corredores livres (mínimo 80cm) para passagem de andadores.
+                Mantenha corredores livres (mínimo 90cm) para passagem de andadores.
               </p>
             </div>
           </div>

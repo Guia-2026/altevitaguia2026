@@ -21,63 +21,63 @@ const BookCover = ({ onStart }: BookCoverProps) => {
           {/* Spine decoration */}
           <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-r from-primary/20 to-transparent" />
           
-          <div className="p-8 md:p-12 text-center">
+          <div className="p-6 md:p-10 text-center">
             {/* Logo */}
-            <div className="mb-8">
+            <div className="mb-5">
               <img 
                 src={logoVertical} 
                 alt="Grupo Altevita" 
-                className="h-28 md:h-36 w-auto mx-auto"
+                className="h-16 md:h-20 w-auto mx-auto"
               />
             </div>
             
             {/* Edition badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full mb-6">
-              <span className="text-sm font-semibold">Edição 2026</span>
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-1 rounded-full mb-4">
+              <span className="text-xs font-semibold">Edição 2026</span>
             </div>
             
             {/* Title */}
-            <div className="mb-6">
-              <h1 className="text-2xl md:text-3xl font-bold text-primary mb-3 leading-tight">
+            <div className="mb-4">
+              <h1 className="text-xl md:text-2xl font-bold text-primary mb-2 leading-tight">
                 Guia de Cuidado<br />e Convivência
               </h1>
-              <div className="w-16 h-1 bg-primary mx-auto rounded-full mb-4" />
-              <p className="text-base text-muted-foreground font-medium">
+              <div className="w-12 h-0.5 bg-primary mx-auto rounded-full mb-3" />
+              <p className="text-sm text-muted-foreground font-medium">
                 Alzheimer e Parkinson
               </p>
-              <p className="text-sm text-muted-foreground mt-1">
+              <p className="text-xs text-muted-foreground mt-0.5">
                 Segurança, Tecnologia e Afeto na Rotina
               </p>
             </div>
             
             {/* Quote */}
-            <p className="text-sm text-muted-foreground italic mb-8 max-w-xs mx-auto">
+            <p className="text-xs text-muted-foreground italic mb-6 max-w-xs mx-auto">
               "Honrar a vida e respeitar a própria história."
             </p>
             
             {/* Start button */}
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2">
               <Button 
                 onClick={onStart}
-                size="lg"
-                className="group px-8 w-full"
+                className="group w-full"
               >
                 Começar a Leitura
-                <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               
               <Button 
                 variant="outline"
+                size="sm"
                 onClick={() => navigate("/print")}
                 className="gap-2"
               >
-                <Printer className="h-4 w-4" />
+                <Printer className="h-3.5 w-3.5" />
                 Versão para Impressão / PDF
               </Button>
             </div>
             
             {/* Format badge */}
-            <p className="mt-8 text-xs text-muted-foreground">
+            <p className="mt-5 text-[0.65rem] text-muted-foreground">
               Formato: Web/Digital Interativo
             </p>
           </div>

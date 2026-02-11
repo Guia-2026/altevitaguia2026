@@ -1,3 +1,4 @@
+import { Download } from "lucide-react";
 import AlertBox from "../AlertBox";
 import SectionCard from "../SectionCard";
 import EnergyQuiz from "../EnergyQuiz";
@@ -551,6 +552,18 @@ const Chapter9Activities = () => {
           icon={<span className="text-2xl">📋</span>}
           className="border-0"
         >
+          {/* Botão de Download do PDF */}
+          <div className="flex justify-center mb-6">
+            <a
+              href="/downloads/Checklist_de_Atividades.pdf"
+              download="Checklist_de_Atividades.pdf"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors min-h-[48px] text-base shadow-md"
+            >
+              <Download className="h-5 w-5" />
+              Baixar Checklist em PDF
+            </a>
+          </div>
+
           <ActivitiesChecklist showInteractive={true} />
         </SectionCard>
       </div>

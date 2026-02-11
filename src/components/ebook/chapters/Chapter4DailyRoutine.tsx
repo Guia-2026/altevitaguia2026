@@ -323,6 +323,7 @@ const Chapter4DailyRoutine = () => {
             src={dailyRoutineCare} 
             alt="Cuidador auxiliando idoso durante refeição com talheres adaptados" 
             className="w-full h-48 object-cover"
+            loading="lazy"
           />
         </div>
         

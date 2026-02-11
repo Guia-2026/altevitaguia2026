@@ -10,6 +10,7 @@ const Chapter2Conditions = () => {
           src={elderlyCareCover} 
           alt="Cuidado com idosos - mãos entrelaçadas representando afeto e segurança" 
           className="w-full h-56 object-cover"
+          loading="lazy"
         />
       </div>
 

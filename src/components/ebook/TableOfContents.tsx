@@ -1,5 +1,8 @@
-import { BookOpen, Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { BookOpen, Heart, Brain, Home, ClipboardList, UtensilsCrossed, Pill, MessageCircle, AlertTriangle, Sparkles, FileDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import DarkModeToggle from "./DarkModeToggle";
 
 interface Chapter {
   id: string;
@@ -27,24 +30,40 @@ interface TableOfContentsProps {
 }
 
 const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsProps) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen bg-background p-4 md:p-8">
+    <div className="min-h-screen bg-background px-4 sm:px-6 py-6 md:py-10">
+      {/* Top actions */}
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-1">
+        <Button
+          variant="ghost"
+          size="icon"
+          onClick={() => navigate("/print")}
+          className="h-9 w-9 rounded-full"
+          aria-label="Exportar PDF"
+        >
+          <FileDown className="h-4 w-4" />
+        </Button>
+        <DarkModeToggle />
+      </div>
+
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 text-primary mb-4">
-            <BookOpen className="h-6 w-6" />
-            <span className="text-sm font-semibold uppercase tracking-wider">Sumário</span>
+        <header className="text-center mb-8 md:mb-12">
+          <div className="inline-flex items-center gap-2 text-primary mb-3">
+            <BookOpen className="h-5 w-5" />
+            <span className="text-xs font-semibold uppercase tracking-widest">Sumário</span>
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-foreground">
+          <h2 className="font-bold text-foreground">
             Índice de Capítulos
           </h2>
-          <p className="text-muted-foreground mt-2 text-sm">Edição 2026</p>
-          <div className="w-20 h-1 bg-primary mx-auto mt-4 rounded-full" />
-        </div>
+          <p className="text-muted-foreground mt-1.5 text-sm">Edição 2026</p>
+          <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full" />
+        </header>
 
         {/* Chapter list */}
-        <div className="space-y-3">
+        <nav className="space-y-2.5" aria-label="Capítulos">
           {chapters.map((chapter, index) => {
             const Icon = chapter.icon;
             const isActive = currentChapter === chapter.id;
@@ -54,16 +73,19 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
                 key={chapter.id}
                 onClick={() => onSelectChapter(chapter.id)}
                 className={cn(
-                  "w-full flex items-center gap-4 p-4 rounded-xl transition-all duration-300 text-left group",
+                  "w-full flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl transition-all duration-200 text-left group min-h-[64px]",
+                  "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+                  "active:scale-[0.98]",
                   isActive 
                     ? "bg-primary text-primary-foreground shadow-lg" 
                     : "bg-card hover:bg-accent border border-border hover:border-primary/30"
                 )}
-                style={{ animationDelay: `${index * 50}ms` }}
+                style={{ animationDelay: `${index * 40}ms` }}
+                aria-current={isActive ? "page" : undefined}
               >
                 {/* Chapter number */}
                 <div className={cn(
-                  "flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg transition-colors",
+                  "flex-shrink-0 w-11 h-11 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center font-bold text-base sm:text-lg transition-colors",
                   isActive 
                     ? "bg-primary-foreground/20 text-primary-foreground" 
                     : "bg-accent text-primary group-hover:bg-primary group-hover:text-primary-foreground"
@@ -73,13 +95,13 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
 
                 {/* Icon */}
                 <div className={cn(
-                  "flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center transition-colors",
+                  "flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center transition-colors",
                   isActive 
                     ? "bg-primary-foreground/10" 
                     : "bg-muted"
                 )}>
                   <Icon className={cn(
-                    "h-5 w-5",
+                    "h-4 w-4 sm:h-5 sm:w-5",
                     isActive ? "text-primary-foreground" : "text-primary"
                   )} />
                 </div>
@@ -87,14 +109,14 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
                 {/* Title and subtitle */}
                 <div className="flex-1 min-w-0">
                   <h3 className={cn(
-                    "font-semibold truncate",
+                    "font-semibold text-sm sm:text-base",
                     isActive ? "text-primary-foreground" : "text-foreground"
                   )}>
                     {chapter.title}
                   </h3>
                   {chapter.subtitle && (
                     <p className={cn(
-                      "text-sm truncate",
+                      "text-xs sm:text-sm truncate mt-0.5",
                       isActive ? "text-primary-foreground/80" : "text-muted-foreground"
                     )}>
                       {chapter.subtitle}
@@ -102,21 +124,25 @@ const TableOfContents = ({ onSelectChapter, currentChapter }: TableOfContentsPro
                   )}
                 </div>
 
-                {/* Page indicator dots */}
-                <div className={cn(
-                  "flex-shrink-0 text-sm font-medium",
+                {/* Arrow */}
+                <ChevronRight className={cn(
+                  "flex-shrink-0 h-4 w-4 transition-transform group-hover:translate-x-0.5",
                   isActive ? "text-primary-foreground/60" : "text-muted-foreground"
-                )}>
-                  •••
-                </div>
+                )} />
               </button>
             );
           })}
-        </div>
+        </nav>
       </div>
     </div>
   );
 };
+
+const ChevronRight = ({ className }: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="m9 18 6-6-6-6" />
+  </svg>
+);
 
 export { chapters };
 export default TableOfContents;

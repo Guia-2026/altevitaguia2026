@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import logoVertical from "@/assets/logo-vertical.png";
-import coverHero from "@/assets/cover-hero.jpg";
 import { ChevronRight, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import DarkModeToggle from "./DarkModeToggle";
@@ -13,18 +12,25 @@ const BookCover = ({ onStart }: BookCoverProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative min-h-screen flex items-end sm:items-center justify-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src={coverHero}
-          alt=""
-          className="w-full h-full object-cover"
-          aria-hidden="true"
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-primary">
+      {/* Geometric background pattern */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Large circle top-right */}
+        <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full border border-primary-foreground/10" />
+        <div className="absolute -top-20 -right-20 w-[400px] h-[400px] rounded-full border border-primary-foreground/5" />
+        {/* Small circle bottom-left */}
+        <div className="absolute -bottom-24 -left-24 w-[350px] h-[350px] rounded-full bg-primary-foreground/5" />
+        {/* Diagonal line accent */}
+        <div className="absolute top-0 left-1/3 w-px h-full bg-gradient-to-b from-transparent via-primary-foreground/10 to-transparent" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-primary-foreground/5 to-transparent" />
+        {/* Subtle grid dots */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: "radial-gradient(circle, hsl(0 0% 100%) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
         />
-        {/* Gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-primary/30" />
-        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-foreground/20" />
       </div>
 
       {/* Dark mode toggle */}
@@ -32,70 +38,84 @@ const BookCover = ({ onStart }: BookCoverProps) => {
         <DarkModeToggle />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-lg px-5 pb-8 pt-16 sm:py-12">
-        {/* Logo */}
-        <div className="mb-6 sm:mb-8">
-          <img
-            src={logoVertical}
-            alt="Grupo Altevita"
-            className="h-14 md:h-18 w-auto mx-auto drop-shadow-lg brightness-0 invert"
-          />
+      {/* Content card */}
+      <div className="relative z-10 w-full max-w-md mx-4">
+        <div className="bg-card rounded-2xl shadow-2xl overflow-hidden">
+          {/* Green top bar */}
+          <div className="h-2 bg-gradient-to-r from-primary via-primary to-secondary" />
+
+          <div className="p-8 sm:p-10 text-center">
+            {/* Logo */}
+            <div className="mb-6">
+              <img
+                src={logoVertical}
+                alt="Grupo Altevita"
+                className="h-20 md:h-24 w-auto mx-auto"
+              />
+            </div>
+
+            {/* Edition badge */}
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full mb-5">
+              <span className="text-xs font-semibold tracking-wider uppercase">Edição 2026</span>
+            </div>
+
+            {/* Title */}
+            <div className="mb-5">
+              <h1 className="text-2xl sm:text-3xl font-bold text-primary mb-2 leading-tight">
+                Guia de Cuidado
+                <br />
+                <span className="text-secondary font-light">e Convivência</span>
+              </h1>
+              <div className="flex items-center justify-center gap-3 my-4">
+                <div className="h-px w-12 bg-border" />
+                <div className="w-2 h-2 rounded-full bg-primary" />
+                <div className="h-px w-12 bg-border" />
+              </div>
+              <p className="text-base font-semibold text-foreground">
+                Alzheimer e Parkinson
+              </p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Segurança, Tecnologia e Afeto na Rotina
+              </p>
+            </div>
+
+            {/* Quote */}
+            <div className="bg-muted rounded-lg px-5 py-3 mb-7">
+              <p className="text-sm text-muted-foreground italic leading-relaxed">
+                "Honrar a vida e respeitar a própria história."
+              </p>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex flex-col gap-2.5">
+              <Button
+                onClick={onStart}
+                size="lg"
+                className="group w-full min-h-[50px] text-base"
+              >
+                Começar a Leitura
+                <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
+
+              <Button
+                variant="outline"
+                onClick={() => navigate("/print")}
+                className="gap-2 min-h-[44px]"
+              >
+                <Printer className="h-4 w-4" />
+                Versão para Impressão / PDF
+              </Button>
+            </div>
+
+            {/* Format */}
+            <p className="mt-6 text-[0.65rem] text-muted-foreground tracking-wider uppercase">
+              Formato: Web/Digital Interativo
+            </p>
+          </div>
+
+          {/* Gray bottom bar */}
+          <div className="h-1.5 bg-secondary" />
         </div>
-
-        {/* Edition badge */}
-        <div className="text-center mb-4">
-          <span className="inline-flex items-center gap-1.5 bg-primary-foreground/15 backdrop-blur-sm text-primary-foreground px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase border border-primary-foreground/20">
-            Edição 2026
-          </span>
-        </div>
-
-        {/* Title block */}
-        <div className="text-center mb-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight mb-3 drop-shadow-md">
-            Guia de Cuidado
-            <br />
-            <span className="font-light">e Convivência</span>
-          </h1>
-          <div className="w-16 h-0.5 bg-primary-foreground/60 mx-auto rounded-full mb-4" />
-          <p className="text-base sm:text-lg text-primary-foreground/90 font-medium tracking-wide">
-            Alzheimer e Parkinson
-          </p>
-          <p className="text-sm text-primary-foreground/70 mt-1">
-            Segurança, Tecnologia e Afeto na Rotina
-          </p>
-        </div>
-
-        {/* Quote */}
-        <p className="text-sm text-primary-foreground/75 italic text-center mb-8 max-w-xs mx-auto">
-          "Honrar a vida e respeitar a própria história."
-        </p>
-
-        {/* Buttons */}
-        <div className="flex flex-col gap-3 max-w-sm mx-auto">
-          <Button
-            onClick={onStart}
-            size="lg"
-            className="group w-full min-h-[52px] text-base bg-primary-foreground text-primary hover:bg-primary-foreground/90 shadow-lg"
-          >
-            Começar a Leitura
-            <ChevronRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </Button>
-
-          <Button
-            variant="outline"
-            onClick={() => navigate("/print")}
-            className="gap-2 min-h-[46px] bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
-          >
-            <Printer className="h-4 w-4" />
-            Versão para Impressão / PDF
-          </Button>
-        </div>
-
-        {/* Format badge */}
-        <p className="mt-6 text-center text-[0.65rem] text-primary-foreground/50 tracking-wide uppercase">
-          Formato: Web/Digital Interativo
-        </p>
       </div>
     </div>
   );

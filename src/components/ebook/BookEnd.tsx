@@ -1,6 +1,7 @@
 import logoVertical from "@/assets/logo-vertical.png";
 import { Instagram, Facebook, Globe, Home, QrCode, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import AIChatSection from "./AIChatSection";
 
 interface BookEndProps {
   onRestart: () => void;
@@ -93,6 +94,11 @@ const BookEnd = ({ onRestart, onShowIndex }: BookEndProps) => {
             Consulte sempre um neurologista ou geriatra.
           </p>
         </div>
+      </div>
+
+      {/* AI Chat Section */}
+      <div className="flex justify-center">
+        <AIChatSection />
       </div>
 
       {/* Navigation buttons */}
